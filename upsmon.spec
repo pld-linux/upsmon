@@ -10,9 +10,7 @@ Source0:	http://www.fideltronik.com.pl/pl_products/upsmon/software/2x_linux/%{na
 Source1:	%{name}.init
 Source2:    http://www.fideltronik.com.pl/pl_products/upsmon/software/2x_linux/%{name}20c.tar
 Source3:	%{name}-client.init
-Patch0:		upsmon-acfail.patch
-Patch1:		upsmon-conf.patch
-Patch2:		upsmon-message.patch
+Patch0:		upsmon-server-pliterki_i_literuffki.patch
 URL:		http://www.fideltronik.com.pl/
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -69,10 +67,11 @@ Wa¿niejsze cechy:
 	* prosta instalacja 
 
 %prep
-%setup -q -c %{name}-%{version} -a2
-%patch0
-%patch1
-%patch2
+%setup -D -T -b0 -c %{name}-%{version}
+%patch0 -p1
+mv czytaj.to server/
+%setup -D -T -b2 -c %{name}-%{version}
+mv czytaj.to client/
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -133,7 +132,7 @@ fi
 
 %files server
 %defattr(644,root,root,755)
-%doc czytaj.to
+%doc server/czytaj.to
 %attr(750,root,root) %{_sbindir}/fidel-upsd
 %attr(750,root,root) /sbin/upsoff
 %attr(750,root,root) %dir %{_sysconfdir}
@@ -147,7 +146,7 @@ fi
 
 %files client
 %defattr(644,root,root,755)
-%doc czytaj.to
+%doc client/czytaj.to
 %attr(750,root,root) %{_sbindir}/fidel-upsc
 %attr(750,root,root) %dir %{_sysconfdir}
 %attr(750,root,root) %dir %{_sysconfdir}/server1
