@@ -1,0 +1,601 @@
+diff -Nur upsmon22s-oryg/czytaj.to upsmon22s/czytaj.to
+--- upsmon22s-oryg/czytaj.to	Thu Dec  5 17:25:21 2002
++++ upsmon22s/czytaj.to	Tue Mar  4 12:39:45 2003
+@@ -1,126 +1,126 @@
+-****************************************************************************
+-*                                                                          *
+-*                          UPS Monitor Server 2.2                          *
+-*			  wersja dla systemu Linux                         *
+-****************************************************************************
+-*                                                                          *
+-*          Program monitorujacy zasilacze UPS frimy Fideltronik            *
+-*                                                                          *
+-*            autor: Zbigniew Huber   huber@fideltronik.com.pl              *
+-*                                                                          *
+-****************************************************************************
+-
+-Kopiowanie i rozpowszechnianie tego oprogramowania jest dozwolone a wrecz 
+-wskazane. Oprogramowanie jest dostepne darmowo na stronie firmy Fideltronik
+-
+-			http://www.fideltronik.com.pl
+-
+-UPS Monitor 2.2 jest programem monitorujacym stan zasilacza UPS podloczonego
+-do portu szeregowego zasialcza UPS. UPS Monitor Server moze takze
+-informowac stacje robocze (i inne serwery) pracujace np w Windows
+-o swoim stanie poprzez siec TCP/IP.
+-Na stacjach roboczych musi pracowac UPS Monitor Client, ktory odbiera
+-komunikaty z UPS Monitor Server 
+-
+-Program UPS Monitor Server sklada sie z dwoch programow:
+-
+-- upsd    : deamon monitorujacy stan UPS i uruchamiajacy skrypty
+-           Plik wykonywalny : /etc/ups/upsd
+-
+-- upsoff       : program wylaczajacy UPS-a po zamknieciu systemu.
+-               Plik wykonywalny : /etc/ups/upsoff
+-     
+-
+-
+-MODUL UPSD
+-
+-Monitoruje stan zasilacza UPS podaczonego do portu szeregowego, za pomoca 
+-specjalnego kabla. Daemon powinien byc uruchamiany przez skrypt startowy 
+-np. local.rc lub inny w zaleznosci od systemu operacyjnego
+-
+-W przypadach zamiany stanu UPS-a uruchamiane sa skrypty znajdyjace sie
++****************************************************************************
++*                                                                          *
++*                          UPS Monitor Server 2.2                          *
++*			  wersja dla systemu Linux                         *
++****************************************************************************
++*                                                                          *
++*          Program monitoruj±cy zasilacze UPS firmy Fideltronik            *
++*                                                                          *
++*            autor: Zbigniew Huber   huber@fideltronik.com.pl              *
++*                                                                          *
++****************************************************************************
++
++Kopiowanie i rozpowszechnianie tego oprogramowania jest dozwolone a wrêcz 
++wskazane. Oprogramowanie jest dostêpne darmowo na stronie firmy Fideltronik
++
++			http://www.fideltronik.com.pl/
++
++UPS Monitor 2.2 jest programem monitoruj±cym stan zasilacza UPS pod³±czonego
++do portu szeregowego zasilacza UPS. UPS Monitor Server mo¿e tak¿e
++informowaæ stacje robocze (i inne serwery) pracuj±ce np w Windows
++o swoim stanie poprzez sieæ TCP/IP.
++Na stacjach roboczych musi pracowaæ UPS Monitor Client, który odbiera
++komunikaty z UPS Monitor Server. 
++
++Program UPS Monitor Server sk³ada siê z dwóch programów:
++
++- upsd    : daemon monitoruj±cy stan UPS i uruchamiaj±cy skrypty
++           Plik wykonywalny : /etc/ups/upsd
++
++- upsoff       : program wy³±czaj±cy UPS-a po zamkniêciu systemu.
++               Plik wykonywalny : /etc/ups/upsoff
++     
++
++
++MODU£ UPSD
++
++Monitoruje stan zasilacza UPS pod³±czonego do portu szeregowego, za pomoc± 
++specjalnego kabla. Daemon powinien byæ uruchamiany przez skrypt startowy 
++np. local.rc lub inny w zale¿no¶ci od systemu operacyjnego.
++
++W przypadkach zamiany stanu UPS-a uruchamiane s± skrypty znajduj±ce siê
+ w katalogu /etc/ups/scripts
+ 
+-Szczegolowy opis konfiguracji upsd jest zawarty w pliku konfiguracyjnym
+-/etc/ups/upsd.conf
+-
+-
+-
+-MODUL UPSOFF
+-
+-Modul ten wykonje wylaczenie zasilacza UPS po zamknieciu systemu.
+-upsoff dodajemy "recznie" w skrypcie zamykajacym system.
+-
+-Miejsce umieszczenia (np. w Red Hat 4.2 ):
+-                          /etc/rc.d/init.d/halt
+-na koncu skryptu po:
+-   .
+-   .
+-   echo "$message"
+-   [ -f /fastboot ] && echo "On the netxt boot fcsk will be skipped."
+-   /etc/UPS/upsd/upsoff                 <==== tutaj wpisujemy 
+-   eval $command -d 
+-   . 
+-Modul upsoff sprawdza czy system byl zamkniety przez upsd i czy
+-konfiguracja zezwala na wylaczenie. Jezeli tak to wylacza UPS.
+-
++Szczegó³owy opis konfiguracji upsd jest zawarty w pliku konfiguracyjnym
++/etc/ups/upsd.conf
++
++
++
++MODU£ UPSOFF
++
++Modu³ ten wykonuje wy³±czenie zasilacza UPS po zamkniêciu systemu.
++upsoff dodajemy "rêcznie" w skrypcie zamykaj±cym system.
++
++Miejsce umieszczenia (np. w Red Hat 4.2 ):
++                          /etc/rc.d/init.d/halt
++na koñcu skryptu po:
++   .
++   .
++   echo "$message"
++   [ -f /fastboot ] && echo "On the next boot fcsk will be skipped."
++   /etc/UPS/upsd/upsoff                 <==== tutaj wpisujemy 
++   eval $command -d 
++   . 
++Modu³ upsoff sprawdza czy system by³ zamkniêty przez upsd i czy
++konfiguracja zezwala na wy³±czenie. Je¿eli tak to wy³±cza UPS.
++
+ 
+ ZMIANY W STOSUNKU DO WERSJI 2.0 UPS MONITORA
+ 
+-- po uruchomieniu automatycznie wysyla komunikat do stacji roboczych
+-  ze pracuje poprawnie (likwidacja blednej informacji na stacjach 
+-  roboczych ze serwer jest nadal zamkniety)
++- po uruchomieniu automatycznie wysy³a komunikat do stacji roboczych
++  ¿e pracuje poprawnie (likwidacja b³êdnej informacji na stacjach 
++  roboczych ¿e serwer jest nadal zamkniêty)
+ - drobne poprawki "kosmetyczne" 
+-- poprawiony skrypt instalacyjny, dodajacy wpis do katalogow startowych
+-- dodano skrypt deinstalacyjny
++- poprawiony skrypt instalacyjny, dodaj±cy wpis do katalogów startowych
++- dodano skrypt deinstalacyjny.
+ 
+ 
+ 
+ ZMIANY W STOSUNKU DO WERSJI 1.0 UPS MONITORA
+ 
+-- wykrywanie braku komuniacji z zasilaczem UPS lub odlaczenia kabla
+-- informowanie innych komputerow o zmianie stanu UPS-a poprzez TCP/IP
+-- we wszystkich skryptach jest dostepny parametr $1 - to czas do zamkniecia
++- wykrywanie braku komunikacji z zasilaczem UPS lub od³±czenia kabla
++- informowanie innych komputerów o zmianie stanu UPS-a poprzez TCP/IP
++- we wszystkich skryptach jest dostêpny parametr $1 - to czas do zamkniêcia
+   w sekundach
+-- plik konfiguracyjny /etc/ups/upsd zawiera opis konfiguracji
++- plik konfiguracyjny /etc/ups/upsd zawiera opis konfiguracji
+ - skrypt /etc/ups/scripts/acfail.sh - uruchamiany jest raz podczas awarii zasilania
+-- skrypt /etc/ups/scripts/message/sh - uruchamiany cylkicznie podczas awarii zasilania
+-- inne drobne poprawki
+-
++- skrypt /etc/ups/scripts/message/sh - uruchamiany cyklicznie podczas awarii zasilania
++- inne drobne poprawki.
++
++
+ 
++Wiêcej informacji uzyskasz w firmie Fideltronik:
+ 
+-Wiecej informacji uzyskasz w firmie Fideltronik:
+-
+-Fideltronik
+-ul. Beniowskiego 2
+-34-200 Sucha Beskidzka 
+-woj. Malopolskie
+-
+-tel : 0(prefix)33 8749809
++Fideltronik
++ul. Beniowskiego 2
++34-200 Sucha Beskidzka 
++woj. Ma³opolskie
++
++tel : 0(prefix)33 8749809
+       0(prefix)33 8749800
+       0(prefix)33 8749801
+ 
+ fax : 0(prefix)33 8741377
+ 
+-www : www.fideltronik.com.pl
+-
+-
+-
+-5. ZALOCZNIK
+-
+-Bledy oraz uwagi dotyczace tego oprogramowania porosze przesylac 
+-na adres : huber@fideltronik.com.pl. Postaram sie pomoc w miare 
+-moich mozliwosci.
+-
+-Pozdrawiam wszystkich milosnikow systemow UNIX-owych.
+-
+-Zbigniew Huber
+-Fideltronik
+-
+-
+-
+-NOTA
+- 
+-AUTOR OPROGRAMOWNAIA ORAZ FIRMA FIDELTRONIK NIE PONOSZA ZADNEJ 
+-ODPOWIEDZIALNOSCI, ZA JAKIEKOLWIEK SZKODY WYNIKLE ZE STOSOWANIA TEGO 
+-OPROGRAMOWANIA.
+\ No newline at end of file
++www : www.fideltronik.com.pl
++
++
++
++5. ZA£¡CZNIK
++
++B³êdy oraz uwagi dotycz±ce tego oprogramowania proszê przesy³aæ 
++na adres : huber@fideltronik.com.pl. Postaram siê pomoc w miarê 
++moich mo¿liwo¶ci.
++
++Pozdrawiam wszystkich mi³o¶ników systemów UNIX-owych.
++
++Zbigniew Huber
++Fideltronik
++
++
++
++NOTA
++
++AUTOR OPROGRAMOWANIA ORAZ FIRMA FIDELTRONIK NIE PONOSZ¡ ¯ADNEJ 
++ODPOWIEDZIALNO¦CI, ZA JAKIEKOLWIEK SZKODY WYNIK£E ZE STOSOWANIA TEGO 
++OPROGRAMOWANIA.
+diff -Nur upsmon22s-oryg/server/scripts/acfail.sh upsmon22s/server/scripts/acfail.sh
+--- upsmon22s-oryg/server/scripts/acfail.sh	Thu Dec  5 17:25:33 2002
++++ upsmon22s/server/scripts/acfail.sh	Tue Mar  4 12:53:40 2003
+@@ -3,8 +3,8 @@
+ #                      UPS Monitor Server 2.2                       #
+ #		dla zasilaczy UPS firmy Fideltronik		    #
+ #####################################################################
+-# Skrypt uruchamiany w przypadku awarii zasilania po uplywie czasu 
++# Skrypt uruchamiany w przypadku awarii zasilania po up³ywie czasu 
+ # chwilowego zaniku.
+-# Jako parametr jest podany czas do zamkniecia systemu w sekundach
++# Jako parametr jest podany czas do zamkniêcia systemu w sekundach
+ 
+-echo "UPS: awaria zasilania - zamkniecie systemy za $1 sekund" >/dev/console
++echo "UPS: awaria zasilania - zamkniecie systemu za $1 sekund" >/dev/console
+diff -Nur upsmon22s-oryg/server/scripts/batlow.sh upsmon22s/server/scripts/batlow.sh
+--- upsmon22s-oryg/server/scripts/batlow.sh	Thu Dec  5 17:25:40 2002
++++ upsmon22s/server/scripts/batlow.sh	Tue Mar  4 12:55:33 2003
+@@ -3,19 +3,19 @@
+ #                      UPS Monitor Server 2.2                       #
+ #		dla zasilaczy UPS firmy Fideltronik		    #
+ #####################################################################
+-# Skrypt uruchamiany w przypadku rozladowania akumulatorow UPS-a 
+-# Jest to sytuacja krytyczna wymagajaca jak najszybszego zamkniecia 
++# Skrypt uruchamiany w przypadku roz³adowania akumulatorów UPS-a 
++# Jest to sytuacja krytyczna wymagaj±ca jak najszybszego zamkniêcia 
+ # systemu operacyjnego !
+ 
+-# ostrzezenie na konsole
+-echo "UPS: baterie rozladowane - zamykam system !" > /dev/console
++# ostrze¿enie na konsolê
++echo "UPS: baterie roz³adowane - zamykam system !" > /dev/console
+ 
+-# informacja dla uzytkownikow - juz dla nich nie mamy czasu :-( 
++# informacja dla u¿ytkowników - ju¿ dla nich nie mamy czasu :-( 
+ wall << EOF
+-UPS: baterie rozladowane !
+-zaraz nastapi zamkniecie systemu operacyjnego...
++UPS: baterie roz³adowane !
++zaraz nast±pi zamkniecie systemu operacyjnego...
+ EOF
+ 
+-# zamkniecie systemu
++# zamkniêcie systemu
+ init 0
+ 
+diff -Nur upsmon22s-oryg/server/scripts/comerror.sh upsmon22s/server/scripts/comerror.sh
+--- upsmon22s-oryg/server/scripts/comerror.sh	Thu Dec  5 17:25:46 2002
++++ upsmon22s/server/scripts/comerror.sh	Tue Mar  4 12:56:43 2003
+@@ -4,16 +4,16 @@
+ #		dla zasilaczy UPS firmy Fideltronik		    #
+ #####################################################################
+ # Skrypt uruchamiany w przypadku utraty komunikacji z UPS-em 
+-# Jest to sytuacja, ktora wymaga od administratora podjecia dzialan
+-# korygujacych !
++# Jest to sytuacja, która wymaga od administratora podjêcia dzia³añ
++# koryguj±cych !
+ 
+-# ostrzezenie na konsole
++# ostrze¿enie na konsole
+ echo "UPS: utrata komunikacji z UPS !" > /dev/console
+ 
+-# informacja dla uzytkownikow
++# informacja dla u¿ytkowników
+ wall << EOF
+ UPS: utrata komunikacji !
+-prosze zachowac swoja prace...
++proszê zachowaæ swoj± pracê...
+ EOF
+ 
+ 
+diff -Nur upsmon22s-oryg/server/scripts/message.sh upsmon22s/server/scripts/message.sh
+--- upsmon22s-oryg/server/scripts/message.sh	Thu Dec  5 17:25:52 2002
++++ upsmon22s/server/scripts/message.sh	Tue Mar  4 12:58:06 2003
+@@ -4,11 +4,11 @@
+ #		dla zasilaczy UPS firmy Fideltronik		    #
+ #####################################################################
+ # Skrypt uruchamiany cyklicznie w przypadku awarii zasilania
+-# czasem do zamkniecia systemu jest parameterm $1
++# czasem do zamkniêcia systemu jest parametr $1
+ 
+-# informacja dla uzytkownikow
++# informacja dla u¿ytkowników
+ wall << EOF
+ UPS: awaria zasilania !
+-zamkniecie systemu nastapi za $1 sekund !
+-posze zachowac swoja prace !
+-EOF
+\ No newline at end of file
++zamkniêcie systemu nast±pi za $1 sekund !
++proszê zachowaæ swoj± pracê !
++EOF
+diff -Nur upsmon22s-oryg/server/scripts/minute.sh upsmon22s/server/scripts/minute.sh
+--- upsmon22s-oryg/server/scripts/minute.sh	Thu Dec  5 17:25:58 2002
++++ upsmon22s/server/scripts/minute.sh	Tue Mar  4 12:58:58 2003
+@@ -5,13 +5,13 @@
+ #####################################################################
+ # Skrypt uruchamiany gdy pozostala jedna minuta do zamkniecia
+ 
+-# ostrzezenie na konsole
+-echo "UPS: 1 minuta do zamkniecia systemu !" > /dev/console
++# ostrze¿enie na konsole
++echo "UPS: 1 minuta do zamkniêcia systemu !" > /dev/console
+ 
+-# informacja dla uzytkownikow
++# informacja dla u¿ytkowników
+ wall << EOF
+-UPS: pozostala jedna minuta do zamkniecia systemu !
+-prosze zakonczyc prace !
++UPS: pozosta³a jedna minuta do zamkniêcia systemu !
++proszê zakoñczyæ pracê !
+ EOF
+ 
+ 
+diff -Nur upsmon22s-oryg/server/scripts/normall.sh upsmon22s/server/scripts/normall.sh
+--- upsmon22s-oryg/server/scripts/normall.sh	Thu Dec  5 17:26:04 2002
++++ upsmon22s/server/scripts/normall.sh	Tue Mar  4 12:59:43 2003
+@@ -3,15 +3,15 @@
+ #                      UPS Monitor Server 2.2                       #
+ #		dla zasilaczy UPS firmy Fideltronik		    #
+ #####################################################################
+-# Skrypt uruchamiany UPS powroci do normalnego stanu pracy
++# Skrypt uruchamiany UPS powróci do normalnego stanu pracy
+ 
+-# ostrzezenie na konsole
+-echo "UPS: powrot zasilania sieciowego !" > /dev/console
++# ostrze¿enie na konsole
++echo "UPS: powrót zasilania sieciowego !" > /dev/console
+ 
+-# informacja dla uzytkwonikow
++# informacja dla u¿ytkowników
+ wall << EOF
+-UPS: powrot do normalnego stanu pracy
+-mozna pracowac !
++UPS: powrót do normalnego stanu pracy
++mo¿na pracowaæ !
+ EOF
+ 
+ 
+diff -Nur upsmon22s-oryg/server/scripts/shutdown.sh upsmon22s/server/scripts/shutdown.sh
+--- upsmon22s-oryg/server/scripts/shutdown.sh	Thu Dec  5 17:26:12 2002
++++ upsmon22s/server/scripts/shutdown.sh	Tue Mar  4 13:00:30 2003
+@@ -3,15 +3,15 @@
+ #                      UPS Monitor Server 2.2                       #
+ #		dla zasilaczy UPS firmy Fideltronik		    #
+ #####################################################################
+-# Skrypt uruchamiany gdy uplynie czas pracy UPS-a 
+-# Ten skrypt uruchamia polecenie zamkniecia systemu operacyjnego 
++# Skrypt uruchamiany gdy up³ynie czas pracy UPS-a 
++# Ten skrypt uruchamia polecenie zamkniêcia systemu operacyjnego 
+ 
+-# ostrzezenie na konsole
+-echo "UPS: zamkniecie systemu !" > /dev/console
++# ostrze¿enie na konsole
++echo "UPS: zamkniêcie systemu !" > /dev/console
+ 
+-# informacja dla uzytkownikow - juz dla nich nie mamy czasu :-( 
++# informacja dla u¿ytkowników - juz dla nich nie mamy czasu :-( 
+ wall << EOF
+-UPS: zamykam sytem operacyjny...!
++UPS: zamykam system operacyjny...!
+ EOF
+ 
+ # shutdown systemu
+diff -Nur upsmon22s-oryg/server/upsd.conf upsmon22s/server/upsd.conf
+--- upsmon22s-oryg/server/upsd.conf	Thu Dec  5 17:27:35 2002
++++ upsmon22s/server/upsd.conf	Tue Mar  4 12:52:36 2003
+@@ -8,39 +8,39 @@
+ ######################## Parametry podstawowe ###########################
+ 
+ 
+-########### Port szeregowy do ktorego jest podlaczony UPS ###############
++########### Port szeregowy do którego jest pod³±czony UPS ###############
+ # pierwszy port to /dev/ttyS0 a drugi /dev/ttyS1 itd.
+-# uwaga - podajemy pelna sciezke!
++# uwaga - podajemy pe³n± ¶cie¿kê!
+ 
+ UpsSerialPort /dev/ttyS1
+ 
+-########### Czas pracy zasialcza ########################################
++########### Czas pracy zasilacza ########################################
+ # uwaga - czas podajemy w minutach!
+ 
+ UpsBackupTimer 5
+ 
+ ########### Czas chwilowego zaniku ######################################
+-# jest to czas po uplywie ktorego UPS Monitor Server uruchomi skrypt
++# jest to czas po up³ywie którego UPS Monitor Server uruchomi skrypt
+ # zdefiniowany w polu 'UpsScriptAcf' 
+ # uwaga - czas podajemy w sekundach!
+ 
+ UpsDisrupTimer 10
+ 
+-########### Czas pomiedzy ostrzezeniami #################################
+-# podczas awarii zasilania UPS Monitor Server informuje uzytkonikow
+-# cyklicznie co okreslony czas o awarii zasilania. jest to realizowane
++########### Czas pomiêdzy ostrze¿eniami #################################
++# podczas awarii zasilania UPS Monitor Server informuje u¿ytkowników
++# cyklicznie co okre¶lony czas o awarii zasilania, jest to realizowane
+ # poprzez uruchamianie skryptu definiowanego w polu 'UpsScriptMsg'
+-# co okreslona ilosc sekund.
++# co okre¶lon± ilo¶æ sekund.
+ # uwaga - czas podajemy w sekundach! 
+ 
+ UpsMsgIntTimer 120
+ 
+-########### Wylaczanie zasilacza UPS po zamknieciu systemu ##############
+-# aby wylaczenie zasilacza bylo mozliwe nalezy w skrypie zamykajacym 
+-# system dopisac polecenie: /etc/UPS/upsd/upsoff po odmontowaniu dyskow
+-# a przed zakonczeniem skryptu ( np. w redhat - w skrypcie halt) 
+-# '0' - nie wylacza UPS-a
+-# '1' - wylacza UPS 
++########### Wy³±czanie zasilacza UPS po zamkniêciu systemu ##############
++# aby wy³±czenie zasilacza by³o mo¿liwe nale¿y w skrypcie zamykaj±cym 
++# system dopisaæ polecenie: /etc/UPS/upsd/upsoff po odmountowaniu dysków
++# a przed zakoñczeniem skryptu ( np. w redhat - w skrypcie halt) 
++# '0' - nie wy³±cza UPS-a
++# '1' - wy³±cza UPS 
+ 
+ UpsOff 0
+ 
+@@ -52,10 +52,10 @@
+ UpsLogFile /etc/ups/upsd.log
+ 
+ 
+-########### Pracuj az do rzoladowania ###################################
+-# Opcja pozwala na prace programu monitorujacego az do rozladowania 
++########### Pracuj a¿ do roz³adowania ###################################
++# Opcja pozwala na pracê programu monitoruj±cego a¿ do roz³adowania 
+ # baterii zasilacza UPS. Ustawienie czasu pracy zasilacza jest ignorowane
+-# '1' - zezwala na prace az do rozladowania 
++# '1' - zezwala na pracê a¿ do roz³adowania 
+ # '0' - standardowo odmierza czas.
+ 
+ RunUntilBtl 0
+@@ -64,94 +64,94 @@
+ ########### Skrypty uruchamiane podczas zmiany stanu UPS-a ##############
+ 
+ ###### awaria zasilania 
+-# skrypt jest uruchamiany raz po uplywie czasu chwilowego zaniku
++# skrypt jest uruchamiany raz po up³ywie czasu chwilowego zaniku
+ 
+ UpsScriptAcf /etc/ups/scripts/acfail.sh
+ 
+-###### powrot do normalnego stanu zasilania
+-# skrypt jest po powrocie do normalnego stanu zasilania
++###### powrót do normalnego stanu zasilania
++# skrypt jest uruchamiany po powrocie do normalnego stanu zasilania
+ 
+ UpsScriptNor /etc/ups/scripts/normall.sh
+ 
+ 
+-###### baterie rozladowane
+-# skrytp jest uruchmiany gdy nastapi rozladowanie baterii UPS-a
+-# UPS Monitor Server uruchamia go i konczy swoja prace.
+-# baterie rozladowane to sytuacja krytyczna , UPS bedzie pracowac 
+-# 1 minute a potem sie wylaczy (modele Ares 1600, 3000 - 2 minuty)
+-# uwaga - skrypt musi zamknac system operacyjny w ciagu 1 minuty !
++###### baterie roz³adowane
++# skrypt jest uruchamiany gdy nast±pi roz³adowanie baterii UPS-a
++# UPS Monitor Server uruchamia go i koñczy swoj± pracê.
++# baterie roz³adowane to sytuacja krytyczna, UPS bêdzie pracowaæ 
++# 1 minutê a potem siê wy³±czy (modele Ares 1600, 3000 - 2 minuty)
++# uwaga - skrypt musi zamkn±æ system operacyjny w ci±gu 1 minuty !
+ 
+ UpsScriptBtl /etc/ups/scripts/batlow.sh
+ 
+ 
+-###### blad komunikacji z UPS-em
+-# skrypt uruchmiany jest gdy nastapi odlaczenie kabal komunikacyjnego
++###### b³±d komunikacji z UPS-em
++# skrypt uruchamiany jest gdy nast±pi od³±czenie kabla komunikacyjnego
+ # podczas normalnego stanu zasilania. 
+ 
+ UpsScriptCom /etc/ups/scripts/comerror.sh
+ 
+ 
+-###### ostrzezenie dla uzytkownikow 
+-# skrypt uruchamiany cylkicznie podczas awarii zasislania
++###### ostrze¿enie dla u¿ytkowników 
++# skrypt uruchamiany cyklicznie podczas awarii zasilania
+ 
+ UpsScriptMsg /etc/ups/scripts/message.sh
+ 
+ 
+-###### minuta do zamkniecia
+-# skrypt uruchaminay 1 minute przed zamknieciem systemu operacyjnego
++###### minuta do zamkniêcia
++# skrypt uruchamiany 1 minutê przed zamkniêciem systemu operacyjnego
+ 
+ UpsScriptMin /etc/ups/scripts/minute.sh
+ 
+ 
+ ###### shutdown systemu
+-# skrypt jest uruchamiany gdy czas uplynie pracy zasilacza
++# skrypt jest uruchamiany gdy up³ynie czas pracy zasilacza
+ # ten skrypt wykonuje shutdown systemu operacyjnego
+-# uwaga - UPS Monitor konczy prace po uruchomienu tego skryptu ! 
++# uwaga - UPS Monitor koñczy pracê po uruchomieniu tego skryptu ! 
+ 
+ UpsScriptShd /etc/ups/scripts/shutdown.sh
+ 
+ 
+ #########################################################################
+-############## Powiadamienie komputerow przez siec TCP/IP ###############
++############## Powiadamianie komputerów przez sieæ TCP/IP ###############
+ 
+-# UPS Monitor Server moze wysylac informacje do komputerow w sieci LAN 
+-# na podstawie uprzednio zdefionowanej listy komputerow (ponizej)
+-# Na zdalnych komputerach musi byc uruchomiony UPS Monitor Client 2.0
+-# ktory po odebraniu sygnalu z UPS Monitor Server ostrzega uzytkonikow.
+-# oraz (po dodatkowej konfiguracji Clienta) moze wykonac dowolny program
+-# lub/i zamknac system operacyjny komputera, na ktorym jest uruchomiony.
++# UPS Monitor Server mo¿e wysy³aæ informacje do komputerów w sieci LAN 
++# na podstawie uprzednio zdefiniowanej listy komputerów (poni¿ej)
++# Na zdalnych komputerach musi byæ uruchomiony UPS Monitor Client 2.0
++# który po odebraniu sygna³u z UPS Monitor Server ostrzega u¿ytkowników.
++# oraz (po dodatkowej konfiguracji Clienta) mo¿e wykonaæ dowolny program
++# lub/i zamkn±æ system operacyjny komputera, na którym jest uruchomiony.
+ 
+ 
+-####### Wlaczenie / wylaczenie powiadamiania przez TCP/IP 
+-# '1' - zezwalaj na powiadamienie przez siec TCP/IP (transport UDP)
++####### W³±czenie / wy³±czenie powiadamiania przez TCP/IP 
++# '1' - zezwalaj na powiadamianie przez siec TCP/IP (transport UDP)
+ # '0' - nie zezwalaj
+ 
+ NotifyPc  0 
+ 
+ 
+ ####### Nazwa UPS-a lub serwera
+-# Podajemy nazwe UPS-a lub serwera na ktorym pracuje UPS Monitor Server
+-# ta nazwa bedzie wyswietlona w ostrzezeniu ktore zobaczy klient 
++# Podajemy nazwê UPS-a lub serwera na którym pracuje UPS Monitor Server
++# ta nazwa bêdzie wy¶wietlona w ostrze¿eniu które zobaczy klient 
+ 
+ UpsName Ares
+ 
+ 
+ ####### Numer portu UDP 
+-# numer portu UDP zajmowanego przez UPS Monitor Server - domyslnie 8881
++# numer portu UDP zajmowanego przez UPS Monitor Server - domy¶lnie 8881
+ UdpPort 8881
+ 
+ 
+ 
+ ####### Interfejs
+-# adres (IP) interfejsu sieciowego na ktorym pracuje UPS Monitor Server 
++# adres (IP) interfejsu sieciowego na którym pracuje UPS Monitor Server 
+ # * - oznacza wszystkie interfejsy
+ InterfaceAddr *
+ 
+ 
+ 
+ #########################################################################
+-######################### Adresy IP komputerow ##########################
+-# ponizej lini [PC] wpisz IP klientow z zainstalowanym UPS Monitor Client
++######################### Adresy IP komputerów ##########################
++# poni¿ej linii [PC] wpisz IP klientów z zainstalowanym UPS Monitor Client
+ 
+ [PC]
+-192.168.0.1   # przykladowy komputer
+\ No newline at end of file
++192.168.0.1   # przyk³adowy komputer
