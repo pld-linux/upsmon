@@ -113,33 +113,33 @@ rm -rf $RPM_BUILD_ROOT
 %post server
 /sbin/chkconfig --add upsd
 if [ -f /var/lock/subsys/upsd ]; then
-        /etc/rc.d/init.d/upsd restart 1>&2
+	/etc/rc.d/init.d/upsd restart 1>&2
 else
-        echo "Run \"/etc/rc.d/init.d/upsd start\" to start upsd daemon."
+	echo "Run \"/etc/rc.d/init.d/upsd start\" to start upsd daemon."
 fi
 
 %preun server
 if [ "$1" = "0" ]; then
-        if [ -f /var/lock/subsys/upsd ]; then
-                /etc/rc.d/init.d/upsd stop 1>&2
-        fi
-        /sbin/chkconfig --del upsd
+	if [ -f /var/lock/subsys/upsd ]; then
+		/etc/rc.d/init.d/upsd stop 1>&2
+	fi
+	/sbin/chkconfig --del upsd
 fi
 
 %post client
 /sbin/chkconfig --add upsc
 if [ -f /var/lock/subsys/upsc ]; then
-        /etc/rc.d/init.d/upsc restart 1>&2
+	/etc/rc.d/init.d/upsc restart 1>&2
 else
-        echo "Run \"/etc/rc.d/init.d/upsc start\" to start upsc daemon."
+	echo "Run \"/etc/rc.d/init.d/upsc start\" to start upsc daemon."
 fi
 
 %preun client
 if [ "$1" = "0" ]; then
-        if [ -f /var/lock/subsys/upsc ]; then
-                /etc/rc.d/init.d/upsc stop 1>&2
-        fi
-        /sbin/chkconfig --del upsc
+	if [ -f /var/lock/subsys/upsc ]; then
+		/etc/rc.d/init.d/upsc stop 1>&2
+	fi
+	/sbin/chkconfig --del upsc
 fi
 
 %files server
