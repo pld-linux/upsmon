@@ -32,6 +32,8 @@ stacji roboczych z zainstalowanym UPS Monitor Client.
 Summary:	UPS Monitor Server
 Summary(pl):	Serwer monitoruj±cy UPS
 Group:		Daemons
+PreReq:		rc-scripts
+Requires(post,preun):	/sbin/chkconfig
 
 %description server
 Allows to monitor UPS from Fideltronik. This package contains the UPS
@@ -54,8 +56,10 @@ Wa¿niejsze cechy:
 %package client
 Summary:	UPS Monitor Client
 Summary(pl):	Klient monitorowanie UPS-ów
-Group:		Daemons
 Version:	2.0
+Group:		Daemons
+PreReq:		rc-scripts
+Requires(post,preun):	/sbin/chkconfig
 
 %description client
 Allows to monitor UPS from Fideltronik. This package contains the UPS
