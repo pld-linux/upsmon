@@ -1,5 +1,5 @@
---- upsmonitor/upsd.conf.orig	Wed Oct 23 23:19:41 2002
-+++ upsmonitor/upsd.conf	Wed Oct 23 23:20:04 2002
+--- server/upsd.conf.orig	Wed Oct 23 23:19:41 2002
++++ server/upsd.conf	Wed Oct 23 23:20:04 2002
 @@ -75,9 +75,9 @@
  
  
