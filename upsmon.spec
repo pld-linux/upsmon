@@ -89,21 +89,21 @@ mv czytaj.to client/
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sbindir},/sbin,%{_sysconfdir}/scripts,/etc/rc.d/init.d,/var/log}
 
-install server/scripts/* $RPM_BUILD_ROOT%{_sysconfdir}/scripts/
-install server/*.conf $RPM_BUILD_ROOT%{_sysconfdir}/
+install server/scripts/* $RPM_BUILD_ROOT%{_sysconfdir}/scripts
+install server/*.conf $RPM_BUILD_ROOT%{_sysconfdir}
 install server/upsd $RPM_BUILD_ROOT%{_sbindir}/fidel-upsd
-install server/upsoff $RPM_BUILD_ROOT/sbin/
+install server/upsoff $RPM_BUILD_ROOT/sbin
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/rc.d/init.d/upsd
 install server/upsd.log $RPM_BUILD_ROOT/var/log/upsd.log
 
 ln -sf /var/log/upsd.log $RPM_BUILD_ROOT%{_sysconfdir}/upsd.log
 
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_sysconfdir}/server{1,2,3,4,5},/etc/rc.d/init.d}
-install client/server1/*.sh $RPM_BUILD_ROOT%{_sysconfdir}/server1/
+install client/server1/*.sh $RPM_BUILD_ROOT%{_sysconfdir}/server1
 for i in 2 3 4 5; do
-	cp $RPM_BUILD_ROOT%{_sysconfdir}/server1/* $RPM_BUILD_ROOT%{_sysconfdir}/server${i}/
+	cp $RPM_BUILD_ROOT%{_sysconfdir}/server1/* $RPM_BUILD_ROOT%{_sysconfdir}/server${i}
 done
-install client/upsc.conf $RPM_BUILD_ROOT%{_sysconfdir}/
+install client/upsc.conf $RPM_BUILD_ROOT%{_sysconfdir}
 install client/upsc $RPM_BUILD_ROOT%{_sbindir}/fidel-upsc
 install %{SOURCE3} $RPM_BUILD_ROOT/etc/rc.d/init.d/upsc
 
@@ -160,7 +160,6 @@ fi
 %defattr(644,root,root,755)
 %doc client/czytaj.to
 %attr(750,root,root) %{_sbindir}/fidel-upsc
-%attr(750,root,root) %dir %{_sysconfdir}
 %attr(750,root,root) %dir %{_sysconfdir}/server1
 %attr(750,root,root) %dir %{_sysconfdir}/server2
 %attr(750,root,root) %dir %{_sysconfdir}/server3
