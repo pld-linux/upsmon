@@ -2,7 +2,7 @@ Summary:	Allows to monitor UPS from Fideltronik
 Summary(pl):	Zapewnia monitoring UPSów firmy Fideltronik
 Name:		upsmon
 Version:	2.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	Free
 Group:		Daemons
