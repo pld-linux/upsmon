@@ -160,6 +160,7 @@ fi
 %defattr(644,root,root,755)
 %doc client/czytaj.to
 %attr(750,root,root) %{_sbindir}/fidel-upsc
+%attr(750,root,root) %dir %{_sysconfdir}
 %attr(750,root,root) %dir %{_sysconfdir}/server1
 %attr(750,root,root) %dir %{_sysconfdir}/server2
 %attr(750,root,root) %dir %{_sysconfdir}/server3
