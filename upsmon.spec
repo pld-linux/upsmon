@@ -20,7 +20,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/ups
 
-%description 
+%description
 Allows to monitor UPS from Fideltronik.
 
 %description -l pl
@@ -75,7 +75,7 @@ Wa¿niejsze cechy:
 	* wykonywanie wybranego skryptu przy kazdej zmianie stanu zdalnego UPS-a
 	* dedykowane skrypty dla ka¿dego zdalnego UPS-a
 	* ³atwa konfiguracja w pliku tekstowym
-	* prosta instalacja 
+	* prosta instalacja
 
 %prep
 %setup -q -c
@@ -96,7 +96,7 @@ install server/upsoff $RPM_BUILD_ROOT/sbin/
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/rc.d/init.d/upsd
 install server/upsd.log $RPM_BUILD_ROOT/var/log/upsd.log
 
-ln -sf /var/log/upsd.log $RPM_BUILD_ROOT%{_sysconfdir}/upsd.log 
+ln -sf /var/log/upsd.log $RPM_BUILD_ROOT%{_sysconfdir}/upsd.log
 
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_sysconfdir}/server{1,2,3,4,5},/etc/rc.d/init.d}
 install client/server1/*.sh $RPM_BUILD_ROOT%{_sysconfdir}/server1/
