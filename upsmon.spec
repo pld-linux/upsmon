@@ -27,15 +27,6 @@ Zapewnia monitoring i bezpieczne zamkniêcie systemu operacyjnego
 komputera z do³±czonym zasilaczem UPS, oraz powiadamianie stacji
 roboczych z zainstalowanym UPS Monitor Client.
 
-Wa¿niejsze cechy:
-	* monitoring sygna³ów "awarii zasilania" i "baterii roz³adowanych"
-	* bezpieczne zamkniêcie systemu operacyjnego
-	* uruchamianie skryptów przy ka¿dej zmianie stanu zasilacza UPS
-	* wy³±czenie zasilacza UPS po zamkniêciu systemu
-	* zapis historii stanu zasilania "LOG"
-	* informowanie stacji roboczych/serwerów w sieci LAN (TCP/IP)
-	* prosta instalacja 
-
 %package server
 Summary:    UPS Monitor 2.2 Server
 Group:	Daemons
@@ -46,6 +37,16 @@ Allows to monitor UPS from Fideltronik.
 %description server -l pl
 Zapewnia monitoring i bezpieczne zamkniêcie systemu operacyjnego
 komputera z do³±czonym zasilaczem UPS, oraz powiadamianie stacji
+roboczych z zainstalowanym UPS Monitor Client.
+
+Wa¿niejsze cechy:
+	* monitoring sygna³ów "awarii zasilania" i "baterii roz³adowanych"
+	* bezpieczne zamkniêcie systemu operacyjnego
+	* uruchamianie skryptów przy ka¿dej zmianie stanu zasilacza UPS
+	* wy³±czenie zasilacza UPS po zamkniêciu systemu
+	* zapis historii stanu zasilania "LOG"
+	* informowanie stacji roboczych/serwerów w sieci LAN (TCP/IP)
+	* prosta instalacja
 
 %package client
 Summary:	UPS Monitor 2.0 Client
