@@ -237,7 +237,7 @@ diff -Nur upsmon22s-oryg/czytaj.to upsmon22s/czytaj.to
 +OPROGRAMOWANIA.
 diff -Nur upsmon22s-oryg/server/scripts/acfail.sh upsmon22s/server/scripts/acfail.sh
 --- upsmon22s-oryg/server/scripts/acfail.sh	Thu Dec  5 17:25:33 2002
-+++ upsmon22s/server/scripts/acfail.sh	Tue Mar  4 12:53:40 2003
++++ upsmon22s/server/scripts/acfail.sh	Wed Mar  5 12:09:02 2003
 @@ -3,8 +3,8 @@
  #                      UPS Monitor Server 2.2                       #
  #		dla zasilaczy UPS firmy Fideltronik		    #
@@ -249,7 +249,7 @@ diff -Nur upsmon22s-oryg/server/scripts/acfail.sh upsmon22s/server/scripts/acfai
 +# Jako parametr jest podany czas do zamkniêcia systemu w sekundach
  
 -echo "UPS: awaria zasilania - zamkniecie systemy za $1 sekund" >/dev/console
-+echo "UPS: awaria zasilania - zamkniecie systemu za $1 sekund" >/dev/console
++echo "UPS: awaria zasilania - zamkniêcie systemu za $1 sekund" >/dev/console
 diff -Nur upsmon22s-oryg/server/scripts/batlow.sh upsmon22s/server/scripts/batlow.sh
 --- upsmon22s-oryg/server/scripts/batlow.sh	Thu Dec  5 17:25:40 2002
 +++ upsmon22s/server/scripts/batlow.sh	Tue Mar  4 12:55:33 2003
