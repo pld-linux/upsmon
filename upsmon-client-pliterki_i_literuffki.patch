@@ -1,0 +1,1123 @@
+diff -Nur upsmon20c-oryg/client/server1/acfail.sh upsmon20c/client/server1/acfail.sh
+--- upsmon20c-oryg/client/server1/acfail.sh	Thu Dec  5 14:21:05 2002
++++ upsmon20c/client/server1/acfail.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 1                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 1 w konfiguracji.
+ # 
+ echo "Server 1: awaria zasilania" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 1: awaria zasilania !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# proces zamkniecia systemu po okreslonym czasie np. 10 min.
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# proces zamkniêcia systemu po okre¶lonym czasie np. 10 min.
+ #
+-# shutdown -t300 -h      # zamknij system po 5 min.
+\ No newline at end of file
++# shutdown -t300 -h      # zamknij system po 5 min.
+diff -Nur upsmon20c-oryg/client/server1/batlow.sh upsmon20c/client/server1/batlow.sh
+--- upsmon20c-oryg/client/server1/batlow.sh	Thu Dec  5 14:21:12 2002
++++ upsmon20c/client/server1/batlow.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 1                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 1 w konfiguracji.
+ # 
+-echo "Server 1: baterie rozladowane" >/dev/console
++echo "Server 1: baterie roz³adowane" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+-Server 1: baterie UPS-a rozladowane !
++Server 1: baterie UPS-a roz³adowane !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# natychmiastowy proces zamkniecia systemu
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# natychmiastowy proces zamkniêcia systemu
+ #
+ # init 0      # zamknij system
+diff -Nur upsmon20c-oryg/client/server1/comerror.sh upsmon20c/client/server1/comerror.sh
+--- upsmon20c-oryg/client/server1/comerror.sh	Thu Dec  5 14:21:17 2002
++++ upsmon20c/client/server1/comerror.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 1                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 1 w konfiguracji.
+ # 
+-echo "Server 1: utrata komunikacj z UPS-em" >/dev/console
++echo "Server 1: utrata komunikacji z UPS-em" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+-Server 1: utrata komunikacji z UPS-em !
++Server 1: utrata komunikacjii z UPS-em !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# proces zamkniecia systemu po okreslonym czasie np. 10 min.
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# proces zamkniêcia systemu po okre¶lonym czasie np. 10 min.
+ #
+ # shutdown -t300 -h      # zamknij system po 5 min.
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server1/normall.sh upsmon20c/client/server1/normall.sh
+--- upsmon20c-oryg/client/server1/normall.sh	Thu Dec  5 14:21:30 2002
++++ upsmon20c/client/server1/normall.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 1                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 1 w konfiguracji.
+ # 
+ echo "Server 1: stan normalny" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 1: stan normalny !
+ EOF
+ 
+ 
+-# Anulujemy proces zamkniecia jezeli pracowal
++# Anulujemy proces zamkniêcia je¿eli pracowa³
+ #
+-# shutdown -c      # anuluj proces zamkniecia
+\ No newline at end of file
++# shutdown -c      # anuluj proces zamkniêcia
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server1/shutdown.sh upsmon20c/client/server1/shutdown.sh
+--- upsmon20c-oryg/client/server1/shutdown.sh	Thu Dec  5 15:33:18 2002
++++ upsmon20c/client/server1/shutdown.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 1                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 1 w konfiguracji.
+ # 
+-echo "Server 1: zamkniecie zdalnego systemu rozpoczete !" >/dev/console
++echo "Server 1: zamkniecie zdalnego systemu rozpoczête !" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 1: zamykanie zdalnego systemu !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# natychmiastowy proces zamkniecia systemu
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# natychmiastowy proces zamkniêcia systemu
+ #
+ # init 0      # zamknij system
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server2/acfail.sh upsmon20c/client/server2/acfail.sh
+--- upsmon20c-oryg/client/server2/acfail.sh	Thu Dec  5 14:27:23 2002
++++ upsmon20c/client/server2/acfail.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 2                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 2 w konfiguracji.
+ # 
+ echo "Server 2: awaria zasilania" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 2: awaria zasilania !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# proces zamkniecia systemu po okreslonym czasie np. 5 min.
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# proces zamkniêcia systemu po okre¶lonym czasie np. 5 min.
+ #
+ # shutdown -t300 -h      # zamknij system po 5 min.
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server2/batlow.sh upsmon20c/client/server2/batlow.sh
+--- upsmon20c-oryg/client/server2/batlow.sh	Thu Dec  5 14:27:29 2002
++++ upsmon20c/client/server2/batlow.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 2                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 2 w konfiguracji.
+ # 
+-echo "Server 2: baterie rozladowane" >/dev/console
++echo "Server 2: baterie roz³adowane" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+-Server 2: baterie UPS-a rozladowane !
++Server 2: baterie UPS-a roz³adowane !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# natychmiastowy proces zamkniecia systemu
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# natychmiastowy proces zamkniêcia systemu
+ #
+ # init 0      # zamknij system
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server2/comerror.sh upsmon20c/client/server2/comerror.sh
+--- upsmon20c-oryg/client/server2/comerror.sh	Thu Dec  5 14:27:37 2002
++++ upsmon20c/client/server2/comerror.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 2                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 2 w konfiguracji.
+ # 
+-echo "Server 2: utrata komunikacj z UPS-em" >/dev/console
++echo "Server 2: utrata komunikacji z UPS-em" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 2: utrata komunikacji z UPS-em !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# proces zamkniecia systemu po okreslonym czasie np. 5 min.
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# proces zamkniêcia systemu po okre¶lonym czasie np. 5 min.
+ #
+ # shutdown -t300 -h      # zamknij system po 5 min.
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server2/normall.sh upsmon20c/client/server2/normall.sh
+--- upsmon20c-oryg/client/server2/normall.sh	Thu Dec  5 14:27:44 2002
++++ upsmon20c/client/server2/normall.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 2                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 2 w konfiguracji.
+ # 
+ echo "Server 2: stan normalny" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 2: stan normalny !
+ EOF
+ 
+ 
+-# Anulujemy proces zamkniecia jezeli pracowal
++# Anulujemy proces zamkniêcia je¿eli pracowa³
+ #
+-# shutdown -c      # anuluj proces zamkniecia
+\ No newline at end of file
++# shutdown -c      # anuluj proces zamkniêcia
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server2/shutdown.sh upsmon20c/client/server2/shutdown.sh
+--- upsmon20c-oryg/client/server2/shutdown.sh	Thu Dec  5 15:32:55 2002
++++ upsmon20c/client/server2/shutdown.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 2                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 2 w konfiguracji.
+ # 
+-echo "Server 2: zamkniecie zdalnego systemu rozpoczete !" >/dev/console
++echo "Server 2: zamkniecie zdalnego systemu rozpoczête !" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 2: zamykanie zdalnego systemu !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# natychmiastowy proces zamkniecia systemu
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# natychmiastowy proces zamkniêcia systemu
+ #
+ # init 0      # zamknij system
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server3/acfail.sh upsmon20c/client/server3/acfail.sh
+--- upsmon20c-oryg/client/server3/acfail.sh	Thu Dec  5 14:28:46 2002
++++ upsmon20c/client/server3/acfail.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 3                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 3 w konfiguracji.
+ # 
+ echo "Server 3: awaria zasilania" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 3: awaria zasilania !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# proces zamkniecia systemu po okreslonym czasie np. 5 min.
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# proces zamkniêcia systemu po okre¶lonym czasie np. 5 min.
+ #
+ # shutdown -t300 -h      # zamknij system po 5 min
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server3/batlow.sh upsmon20c/client/server3/batlow.sh
+--- upsmon20c-oryg/client/server3/batlow.sh	Thu Dec  5 14:29:57 2002
++++ upsmon20c/client/server3/batlow.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 3                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 3 w konfiguracji.
+ # 
+-echo "Server 3: baterie rozladowane" >/dev/console
++echo "Server 3: baterie roz³adowane" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+-Server 3: baterie UPS-a rozladowane !
++Server 3: baterie UPS-a roz³adowane !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# natychmiastowy proces zamkniecia systemu
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# natychmiastowy proces zamkniêcia systemu
+ #
+ # init 0      # zamknij system
+diff -Nur upsmon20c-oryg/client/server3/comerror.sh upsmon20c/client/server3/comerror.sh
+--- upsmon20c-oryg/client/server3/comerror.sh	Thu Dec  5 14:30:28 2002
++++ upsmon20c/client/server3/comerror.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 3                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 3 w konfiguracji.
+ # 
+-echo "Server 3: utrata komunikacj z UPS-em" >/dev/console
++echo "Server 3: utrata komunikacji z UPS-em" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 3: utrata komunikacji z UPS-em !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# proces zamkniecia systemu po okreslonym czasie np. 10 min.
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# proces zamkniêcia systemu po okre¶lonym czasie np. 10 min.
+ #
+ # shutdown -t300 -h      # zamknij system po 5 min.
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server3/normall.sh upsmon20c/client/server3/normall.sh
+--- upsmon20c-oryg/client/server3/normall.sh	Thu Dec  5 14:31:01 2002
++++ upsmon20c/client/server3/normall.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 3                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 3 w konfiguracji.
+ # 
+ echo "Server 3: stan normalny" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 3: stan normalny !
+ EOF
+ 
+ 
+-# Anulujemy proces zamkniecia jezeli pracowal
++# Anulujemy proces zamkniêcia je¿eli pracowa³
+ #
+-# shutdown -c      # anuluj proces zamkniecia
+\ No newline at end of file
++# shutdown -c      # anuluj proces zamkniêcia
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server3/shutdown.sh upsmon20c/client/server3/shutdown.sh
+--- upsmon20c-oryg/client/server3/shutdown.sh	Thu Dec  5 15:32:14 2002
++++ upsmon20c/client/server3/shutdown.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 3                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 3 w konfiguracji.
+ # 
+-echo "Server 3: zamkniecie zdalnego systemu rozpoczete !" >/dev/console
++echo "Server 3: zamkniecie zdalnego systemu rozpoczête !" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 3: zamykanie zdalnego systemu !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# natychmiastowy proces zamkniecia systemu
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# natychmiastowy proces zamkniêcia systemu
+ #
+ # init 0      # zamknij system
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server4/acfail.sh upsmon20c/client/server4/acfail.sh
+--- upsmon20c-oryg/client/server4/acfail.sh	Thu Dec  5 14:31:54 2002
++++ upsmon20c/client/server4/acfail.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 4                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 4 w konfiguracji.
+ # 
+ echo "Server 4: awaria zasilania" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 4: awaria zasilania !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# proces zamkniecia systemu po okreslonym czasie np. 10 min.
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# proces zamkniêcia systemu po okre¶lonym czasie np. 10 min.
+ #
+ # shutdown -t300 -h      # zamknij system po 5 min.
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server4/batlow.sh upsmon20c/client/server4/batlow.sh
+--- upsmon20c-oryg/client/server4/batlow.sh	Thu Dec  5 14:34:39 2002
++++ upsmon20c/client/server4/batlow.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 4                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 4 w konfiguracji.
+ # 
+-echo "Server 4: baterie rozladowane" >/dev/console
++echo "Server 4: baterie roz³adowane" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+-Server 4: baterie UPS-a rozladowane !
++Server 4: baterie UPS-a roz³adowane !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# natychmiastowy proces zamkniecia systemu
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# natychmiastowy proces zamkniêcia systemu
+ #
+ # init 0      # zamknij system
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server4/comerror.sh upsmon20c/client/server4/comerror.sh
+--- upsmon20c-oryg/client/server4/comerror.sh	Thu Dec  5 14:34:21 2002
++++ upsmon20c/client/server4/comerror.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 4                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 4 w konfiguracji.
+ # 
+-echo "Server 4: utrata komunikacj z UPS-em" >/dev/console
++echo "Server 4: utrata komunikacji z UPS-em" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 4: utrata komunikacji z UPS-em !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# proces zamkniecia systemu po okreslonym czasie np. 10 min.
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# proces zamkniêcia systemu po okre¶lonym czasie np. 10 min.
+ #
+ # shutdown -t300 -h      # zamknij system po 5 min.
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server4/normall.sh upsmon20c/client/server4/normall.sh
+--- upsmon20c-oryg/client/server4/normall.sh	Thu Dec  5 14:34:04 2002
++++ upsmon20c/client/server4/normall.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 4                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 4 w konfiguracji.
+ # 
+ echo "Server 4: stan normalny" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 4: stan normalny !
+ EOF
+ 
+ 
+-# Anulujemy proces zamkniecia jezeli pracowal
++# Anulujemy proces zamkniêcia je¿eli pracowa³
+ #
+-# shutdown -c      # anuluj proces zamkniecia
+\ No newline at end of file
++# shutdown -c      # anuluj proces zamkniêcia
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server4/shutdown.sh upsmon20c/client/server4/shutdown.sh
+--- upsmon20c-oryg/client/server4/shutdown.sh	Thu Dec  5 15:32:23 2002
++++ upsmon20c/client/server4/shutdown.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 4                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 4 w konfiguracji.
+ # 
+-echo "Server 4: zamkniecie zdalnego systemu rozpoczete !" >/dev/console
++echo "Server 4: zamkniecie zdalnego systemu rozpoczête !" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 4: zamykanie zdalnego systemu !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# natychmiastowy proces zamkniecia systemu
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# natychmiastowy proces zamkniêcia systemu
+ #
+ # init 0      # zamknij system
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server5/acfail.sh upsmon20c/client/server5/acfail.sh
+--- upsmon20c-oryg/client/server5/acfail.sh	Thu Dec  5 14:35:08 2002
++++ upsmon20c/client/server5/acfail.sh	Tue Mar  4 17:20:28 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 5                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 5 w konfiguracji.
+ # 
+ echo "Server 5: awaria zasilania" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 5: awaria zasilania !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# proces zamkniecia systemu po okreslonym czasie np. 10 min.
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# proces zamkniêcia systemu po okre¶lonym czasie np. 10 min.
+ #
+ # shutdown -t300 -h      # zamknij system po 5 min.
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server5/batlow.sh upsmon20c/client/server5/batlow.sh
+--- upsmon20c-oryg/client/server5/batlow.sh	Thu Dec  5 14:35:36 2002
++++ upsmon20c/client/server5/batlow.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 5                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 5 w konfiguracji.
+ # 
+-echo "Server 5: baterie rozladowane" >/dev/console
++echo "Server 5: baterie roz³adowane" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+-Server 5: baterie UPS-a rozladowane !
++Server 5: baterie UPS-a roz³adowane !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# natychmiastowy proces zamkniecia systemu
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# natychmiastowy proces zamkniêcia systemu
+ #
+ # init 0      # zamknij system
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server5/comerror.sh upsmon20c/client/server5/comerror.sh
+--- upsmon20c-oryg/client/server5/comerror.sh	Thu Dec  5 14:36:04 2002
++++ upsmon20c/client/server5/comerror.sh	Tue Mar  4 17:20:28 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 5                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 5 w konfiguracji.
+ # 
+-echo "Server 5: utrata komunikacj z UPS-em" >/dev/console
++echo "Server 5: utrata komunikacji z UPS-em" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 5: utrata komunikacji z UPS-em !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# proces zamkniecia systemu po okreslonym czasie np. 10 min.
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# proces zamkniêcia systemu po okre¶lonym czasie np. 10 min.
+ #
+-# shutdown -t300 -h      # zamknij system po 5 min.
+\ No newline at end of file
++# shutdown -t300 -h      # zamknij system po 5 min.
+diff -Nur upsmon20c-oryg/client/server5/normall.sh upsmon20c/client/server5/normall.sh
+--- upsmon20c-oryg/client/server5/normall.sh	Thu Dec  5 14:36:27 2002
++++ upsmon20c/client/server5/normall.sh	Tue Mar  4 17:20:28 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 5                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 5 w konfiguracji.
+ # 
+ echo "Server 5: stan normalny" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+ Server 5: stan normalny !
+ EOF
+ 
+ 
+-# Anulujemy proces zamkniecia jezeli pracowal
++# Anulujemy proces zamkniêcia je¿eli pracowa³
+ #
+-# shutdown -c      # anuluj proces zamkniecia
+\ No newline at end of file
++# shutdown -c      # anuluj proces zamkniêcia
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/server5/shutdown.sh upsmon20c/client/server5/shutdown.sh
+--- upsmon20c-oryg/client/server5/shutdown.sh	Thu Dec  5 14:36:48 2002
++++ upsmon20c/client/server5/shutdown.sh	Tue Mar  4 17:20:27 2003
+@@ -5,20 +5,20 @@
+ #####################################################################
+ #                            SERVER 5                               #
+ #####################################################################
+-# Skrypt jest uruchamiany w przypadku odebrania sygnalu z programu
+-# UPS Monitor Server 2.x pracujacego na komputerze okreslonym jako
++# Skrypt jest uruchamiany w przypadku odebrania sygna³u z programu
++# UPS Monitor Server 2.x pracuj±cego na komputerze okre¶lonym jako
+ # Server 5 w konfiguracji.
+ # 
+-echo "Server 5: zamkniecie zdalnego systemu rozpoczete !" >/dev/console
++echo "Server 5: zamkniecie zdalnego systemu rozpoczête !" >/dev/console
+ 
+ 
+-# Wyslij informacje do zalogowanych uzytkownikow
++# Wy¶lij informacjê do zalogowanych u¿ytkowników
+ #
+ wall << EOF
+-Server 5: zamykanie zdlanego systemu !
++Server 5: zamykanie zdalnego systemu !
+ EOF
+ 
+-# W zaleznosci od potrzeb w tym skrypcie mozna takze zainicjowac
+-# natychmiastowy proces zamkniecia systemu
++# W zale¿no¶ci od potrzeb w tym skrypcie mo¿na tak¿e zainicjowaæ
++# natychmiastowy proces zamkniêcia systemu
+ #
+ # init 0      # zamknij system
+\ No newline at end of file
+diff -Nur upsmon20c-oryg/client/upsc.conf upsmon20c/client/upsc.conf
+--- upsmon20c-oryg/client/upsc.conf	Thu Dec  5 14:45:43 2002
++++ upsmon20c/client/upsc.conf	Tue Mar  4 17:20:28 2003
+@@ -6,69 +6,69 @@
+ 
+ 
+ ########################### Interfejs ###################################
+-# adres (IP) interfejsu sieciowego na ktorym pracuje UPS Monitor Client 
++# adres (IP) interfejsu sieciowego na którym pracuje UPS Monitor Client 
+ # * - oznacza wszystkie interfejsy
+ InterfaceAddr *
+ 
+ 
+ ####################### Numer portu UDP #################################
+-# numer portu UDP zajmowanego przez UPS Monitor Client - domyslnie 8882
++# numer portu UDP zajmowanego przez UPS Monitor Client - domy¶lnie 8882
+ UdpPort 8882
+ 
+ 
+ #########################################################################
+-# Konfiguracja komputerow z zainstalowanym UPS Monitor Server 2.x
+-# Nalezy podac adres IP i ustawic "Server..AckFlag" na "1" aby serwer byl
+-# obslugiwany.
++# Konfiguracja komputerów z zainstalowanym UPS Monitor Server 2.x
++# Nale¿y podaæ adres IP i ustawiæ "Server..AckFlag" na "1" aby serwer by³
++# obs³ugiwany.
+ 
+ 
+ ########################### Server 1 ####################################
+ Server1Addr 192.168.0.1   # Adres IP hosta z UPS Monitor Server 2.x
+-Server1Port 8881          # Port UDP skad nadaje UPS Monitor Server 2.x
+-Server1AckFlag 0          # zezwolenie na odbior    1 - zezwala
+-Server1NorFlag 1          # stanu normalny          1 - uruchom normall.sh
++Server1Port 8881          # Port UDP sk±d nadaje UPS Monitor Server 2.x
++Server1AckFlag 0          # zezwolenie na odbiór    1 - zezwala
++Server1NorFlag 1          # stan normalny          1 - uruchom normall.sh
+ Server1AcfFlag 1          # awaria zasilania        1 - uruchom acfail.sh
+-Server1BtlFlag 1          # baterie rozladowane     1 - uruchom batlow.sh
+-Server1ShdFlag 1          # zamkniecie serwera      1 - uruchom batlow.sh
++Server1BtlFlag 1          # baterie roz³adowane     1 - uruchom batlow.sh
++Server1ShdFlag 1          # zamkniêcie serwera      1 - uruchom batlow.sh
+ Server1ComFlag 1          # utrata komunikacji      1 - uruchom commerr.sh 
+ 
+ ########################### Server 2 ####################################
+ Server2Addr 192.168.0.2   # Adres IP hosta z UPS Monitor Server 2.x
+-Server2Port 8881          # Port UDP skad nadaje UPS Monitor Server 2.x
+-Server2AckFlag 0          # zezwolenie na odbior    1 - zezwala
+-Server2NorFlag 1          # stanu normalny          1 - uruchom normall.sh
++Server2Port 8881          # Port UDP sk±d nadaje UPS Monitor Server 2.x
++Server2AckFlag 0          # zezwolenie na odbiór    1 - zezwala
++Server2NorFlag 1          # stan normalny          1 - uruchom normall.sh
+ Server2AcfFlag 1          # awaria zasilania        1 - uruchom acfail.sh
+-Server2BtlFlag 1          # baterie rozladowane     1 - uruchom batlow.sh
+-Server2ShdFlag 1          # zamkniecie serwera      1 - uruchom batlow.sh
++Server2BtlFlag 1          # baterie roz³adowane     1 - uruchom batlow.sh
++Server2ShdFlag 1          # zamkniêcie serwera      1 - uruchom batlow.sh
+ Server2ComFlag 1          # utrata komunikacji      1 - uruchom commerr.sh 
+ 
+ 
+ ########################### Server 3 ####################################
+ Server3Addr 192.168.0.3   # Adres IP hosta z UPS Monitor Server 2.x
+-Server3Port 8881          # Port UDP skad nadaje UPS Monitor Server 2.x
+-Server3AckFlag 0          # zezwolenie na odbior    1 - zezwala
+-Server3NorFlag 1          # stanu normalny          1 - uruchom normall.sh
++Server3Port 8881          # Port UDP sk±d nadaje UPS Monitor Server 2.x
++Server3AckFlag 0          # zezwolenie na odbiór    1 - zezwala
++Server3NorFlag 1          # stan normalny          1 - uruchom normall.sh
+ Server3AcfFlag 1          # awaria zasilania        1 - uruchom acfail.sh
+-Server3BtlFlag 1          # baterie rozladowane     1 - uruchom batlow.sh
+-Server3ShdFlag 1          # zamkniecie serwera      1 - uruchom batlow.sh
++Server3BtlFlag 1          # baterie roz³adowane     1 - uruchom batlow.sh
++Server3ShdFlag 1          # zamkniêcie serwera      1 - uruchom batlow.sh
+ Server3ComFlag 1          # utrata komunikacji      1 - uruchom commerr.sh 
+ 
+ ########################### Server 4 ####################################
+ Server4Addr 192.168.0.4   # Adres IP hosta z UPS Monitor Server 2.x
+-Server4Port 8881          # Port UDP skad nadaje UPS Monitor Server 2.x
+-Server4AckFlag 0          # zezwolenie na odbior    1 - zezwala
+-Server4NorFlag 1          # stanu normalny          1 - uruchom normall.sh
++Server4Port 8881          # Port UDP sk±d nadaje UPS Monitor Server 2.x
++Server4AckFlag 0          # zezwolenie na odbiór    1 - zezwala
++Server4NorFlag 1          # stan normalny          1 - uruchom normall.sh
+ Server4AcfFlag 1          # awaria zasilania        1 - uruchom acfail.sh
+-Server4BtlFlag 1          # baterie rozladowane     1 - uruchom batlow.sh
+-Server4ShdFlag 1          # zamkniecie serwera      1 - uruchom batlow.sh
++Server4BtlFlag 1          # baterie roz³adowane     1 - uruchom batlow.sh
++Server4ShdFlag 1          # zamkniêcie serwera      1 - uruchom batlow.sh
+ Server4ComFlag 1          # utrata komunikacji      1 - uruchom commerr.sh 
+ 
+ ########################### Server 5 ####################################
+ Server5Addr 192.168.0.5   # Adres IP hosta z UPS Monitor Server 2.x
+-Server5Port 8881          # Port UDP skad nadaje UPS Monitor Server 2.x
+-Server5AckFlag 0          # zezwolenie na odbior    1 - zezwala
+-Server5NorFlag 1          # stanu normalny          1 - uruchom normall.sh
++Server5Port 8881          # Port UDP sk±d nadaje UPS Monitor Server 2.x
++Server5AckFlag 0          # zezwolenie na odbiór    1 - zezwala
++Server5NorFlag 1          # stan normalny          1 - uruchom normall.sh
+ Server5AcfFlag 1          # awaria zasilania        1 - uruchom acfail.sh
+-Server5BtlFlag 1          # baterie rozladowane     1 - uruchom batlow.sh
+-Server5ShdFlag 1          # zamkniecie serwera      1 - uruchom batlow.sh
++Server5BtlFlag 1          # baterie roz³adowane     1 - uruchom batlow.sh
++Server5ShdFlag 1          # zamkniêcie serwera      1 - uruchom batlow.sh
+ Server5ComFlag 1          # utrata komunikacji      1 - uruchom commerr.sh 
+diff -Nur upsmon20c-oryg/czytaj.to upsmon20c/czytaj.to
+--- upsmon20c-oryg/czytaj.to	Thu Dec  5 16:05:41 2002
++++ upsmon20c/czytaj.to	Tue Mar  4 16:36:15 2003
+@@ -1,83 +1,83 @@
+-****************************************************************************
+-*                                                                          *
+-*                          UPS Monitor Client 2.0                          *
+-*			  wersja dla systemu Linux                         *
+-****************************************************************************
+-*                                                                          *
+-*          Program monitorujacy zasilacze UPS frimy Fideltronik            *
+-*                                                                          *
+-*            autor: Zbigniew Huber   huber@fideltronik.com.pl              *
+-*                                                                          *
+-****************************************************************************
+-
+-Kopiowanie i rozpowszechnianie tego oprogramowania jest dozwolone a wrecz 
+-wskazane. Oprogramowanie jest dostepne darmowo na stronie firmy Fideltronik
+-
+-			http://www.fideltronik.com.pl
+-
+-UPS Monitor Client 2.0 jest programem odbierajacym komunikaty z modulu
+-UPS Monitor Server 2.x poprzez TCP/IP i wykonujacym odpowiednie skrypty
+-w ktorych mozna zamiescic polecenie zamkniecia lokalnego systemu.
+-
+-Client odbiera komunikaty z maksymalnie 5 serwerow i na podstawie analizy 
+-komunikatu i wlasnej konfiguracji uruchamia skrypty.
+-Skrypty te znajduja sie w katalogach /etc/ups_client/server1..5 
+-(kazdy serwer posiada wlasny katalog ze skryptami)
++****************************************************************************
++*                                                                          *
++*                          UPS Monitor Client 2.0                          *
++*			  wersja dla systemu Linux                         *
++****************************************************************************
++*                                                                          *
++*          Program monitoruj±cy zasilacze UPS firmy Fideltronik            *
++*                                                                          *
++*            autor: Zbigniew Huber   huber@fideltronik.com.pl              *
++*                                                                          *
++****************************************************************************
++
++Kopiowanie i rozpowszechnianie tego oprogramowania jest dozwolone a wrêcz 
++wskazane. Oprogramowanie jest dostêpne darmowo na stronie firmy Fideltronik
++
++			http://www.fideltronik.com.pl/
++
++UPS Monitor Client 2.0 jest programem odbieraj±cym komunikaty z modu³u
++UPS Monitor Server 2.x poprzez TCP/IP i wykonuj±cym odpowiednie skrypty,
++w których mo¿na zamie¶ciæ polecenie zamkniêcia lokalnego systemu.
++
++Client odbiera komunikaty z maksymalnie 5 serwerów i na podstawie analizy 
++komunikatu i w³asnej konfiguracji uruchamia skrypty.
++Skrypty te znajduj± siê w katalogach /etc/ups_client/server1..5 
++(ka¿dy serwer posiada w³asny katalog ze skryptami)
+ 
+ 
+-Dla kazdego serwera przewidziano nastepujace skrypty:
++Dla ka¿dego serwera przewidziano nastêpuj±ce skrypty:
+  
+-- normall.sh   - gdy UPS powroci do stanu normalnego
+-- acfail.sh    - gdy nastapi awaria zasilania
+-- batlow.sh    - gdy baterie UPS-a sie rozladuja i shutdown serwera
+-- shutdown.sh  - gdy nastapi shutdown serwera po okreslonym czasie
+-- comerror.sh  - gdy zostanie utracona komunikacja pomiedzy UPS a serwerem
++- normall.sh   - gdy UPS powróci do stanu normalnego
++- acfail.sh    - gdy nast±pi awaria zasilania
++- batlow.sh    - gdy baterie UPS-a siê roz³aduj± i shutdown serwera
++- shutdown.sh  - gdy nast±pi shutdown serwera po okre¶lonym czasie
++- comerror.sh  - gdy zostanie utracona komunikacja pomiêdzy UPS a serwerem
+ 
+-Decyzje czy uruchamiac skrypty dla danego zdarzenia ustala sie w pliku
+-konfiguracyjnym "/etc/ups_client/upsc.conf", ustawiajac odpowiednie flagi.
++Decyzjê czy uruchamiaæ skrypty dla danego zdarzenia ustala siê w pliku
++konfiguracyjnym "/etc/ups_client/upsc.conf", ustawiaj±c odpowiednie flagi.
+ 
+ 
+ UWAGA !!!
+-Skrypty zawieraja tylko ostrzezenia dla uzytkownikow.
+-Zamykanie systemu operacyjnego i inne wazne operacje sa zakomentowane. 
+-Dlatego tez administrator systemu powinien skrypty skonfigurowac 
+-wg wlasnego uznania.
++Skrypty zawieraj± tylko ostrze¿enia dla u¿ytkowników.
++Zamykanie systemu operacyjnego i inne wa¿ne operacje s± zakomentowane. 
++Dlatego te¿ administrator systemu powinien skrypty skonfigurowaæ 
++wg w³asnego uznania.
+ 
+ 
+ 
+ 
+-Wiecej informacji uzyskasz w firmie Fideltronik:
+-
+-Fideltronik
+-ul. Beniowskiego 2
+-34-200 Sucha Beskidzka 
+-woj. Malopolskie
+-
+-tel : 0(prefix)33 8749809
++Wiêcej informacji uzyskasz w firmie Fideltronik:
++
++Fideltronik
++ul. Beniowskiego 2
++34-200 Sucha Beskidzka 
++woj. Ma³opolskie
++
++tel : 0(prefix)33 8749809
+       0(prefix)33 8749800
+       0(prefix)33 8749801
+ 
+ fax : 0(prefix)33 8741377
+ 
+-www : www.fideltronik.com.pl
+-
+-
+-
+-ZALOCZNIK
+-
+-Bledy oraz uwagi dotyczace tego oprogramowania porosze przesylac 
+-na adres : huber@fideltronik.com.pl. Postaram sie pomoc w miare 
+-moich mozliwosci.
+-
+-Pozdrawiam wszystkich milosnikow systemow UNIX-owych.
+-
+-Zbigniew Huber
+-Fideltronik
+-
+-
+-
+-NOTA
+- 
+-AUTOR OPROGRAMOWNAIA ORAZ FIRMA FIDELTRONIK NIE PONOSZA ZADNEJ 
+-ODPOWIEDZIALNOSCI, ZA JAKIEKOLWIEK SZKODY WYNIKLE ZE STOSOWANIA TEGO 
+-OPROGRAMOWANIA.
+\ No newline at end of file
++www : www.fideltronik.com.pl
++
++
++
++ZA£¡CZNIK
++
++B³êdy oraz uwagi dotycz±ce tego oprogramowania proszê przesy³aæ 
++na adres : huber@fideltronik.com.pl. Postaram siê pomoc w miarê
++moich mo¿liwo¶ci.
++
++Pozdrawiam wszystkich mi³o¶ników systemów UNIX-owych.
++
++Zbigniew Huber
++Fideltronik
++
++
++
++NOTA
++ 
++AUTOR OPROGRAMOWANIA ORAZ FIRMA FIDELTRONIK NIE PONOSZ¡ ¯ADNEJ 
++ODPOWIEDZIALNO¦CI, ZA JAKIEKOLWIEK SZKODY WYNIK£E ZE STOSOWANIA TEGO 
++OPROGRAMOWANIA.
+diff -Nur upsmon20c-oryg/czytaj.to~ upsmon20c/czytaj.to~
+--- upsmon20c-oryg/czytaj.to~	Thu Jan  1 01:00:00 1970
++++ upsmon20c/czytaj.to~	Thu Dec  5 16:05:41 2002
+@@ -0,0 +1,83 @@
++****************************************************************************
++*                                                                          *
++*                          UPS Monitor Client 2.0                          *
++*			  wersja dla systemu Linux                         *
++****************************************************************************
++*                                                                          *
++*          Program monitorujacy zasilacze UPS frimy Fideltronik            *
++*                                                                          *
++*            autor: Zbigniew Huber   huber@fideltronik.com.pl              *
++*                                                                          *
++****************************************************************************
++
++Kopiowanie i rozpowszechnianie tego oprogramowania jest dozwolone a wrecz 
++wskazane. Oprogramowanie jest dostepne darmowo na stronie firmy Fideltronik
++
++			http://www.fideltronik.com.pl
++
++UPS Monitor Client 2.0 jest programem odbierajacym komunikaty z modulu
++UPS Monitor Server 2.x poprzez TCP/IP i wykonujacym odpowiednie skrypty
++w ktorych mozna zamiescic polecenie zamkniecia lokalnego systemu.
++
++Client odbiera komunikaty z maksymalnie 5 serwerow i na podstawie analizy 
++komunikatu i wlasnej konfiguracji uruchamia skrypty.
++Skrypty te znajduja sie w katalogach /etc/ups_client/server1..5 
++(kazdy serwer posiada wlasny katalog ze skryptami)
++
++
++Dla kazdego serwera przewidziano nastepujace skrypty:
++ 
++- normall.sh   - gdy UPS powroci do stanu normalnego
++- acfail.sh    - gdy nastapi awaria zasilania
++- batlow.sh    - gdy baterie UPS-a sie rozladuja i shutdown serwera
++- shutdown.sh  - gdy nastapi shutdown serwera po okreslonym czasie
++- comerror.sh  - gdy zostanie utracona komunikacja pomiedzy UPS a serwerem
++
++Decyzje czy uruchamiac skrypty dla danego zdarzenia ustala sie w pliku
++konfiguracyjnym "/etc/ups_client/upsc.conf", ustawiajac odpowiednie flagi.
++
++
++UWAGA !!!
++Skrypty zawieraja tylko ostrzezenia dla uzytkownikow.
++Zamykanie systemu operacyjnego i inne wazne operacje sa zakomentowane. 
++Dlatego tez administrator systemu powinien skrypty skonfigurowac 
++wg wlasnego uznania.
++
++
++
++
++Wiecej informacji uzyskasz w firmie Fideltronik:
++
++Fideltronik
++ul. Beniowskiego 2
++34-200 Sucha Beskidzka 
++woj. Malopolskie
++
++tel : 0(prefix)33 8749809
++      0(prefix)33 8749800
++      0(prefix)33 8749801
++
++fax : 0(prefix)33 8741377
++
++www : www.fideltronik.com.pl
++
++
++
++ZALOCZNIK
++
++Bledy oraz uwagi dotyczace tego oprogramowania porosze przesylac 
++na adres : huber@fideltronik.com.pl. Postaram sie pomoc w miare 
++moich mozliwosci.
++
++Pozdrawiam wszystkich milosnikow systemow UNIX-owych.
++
++Zbigniew Huber
++Fideltronik
++
++
++
++NOTA
++ 
++AUTOR OPROGRAMOWNAIA ORAZ FIRMA FIDELTRONIK NIE PONOSZA ZADNEJ 
++ODPOWIEDZIALNOSCI, ZA JAKIEKOLWIEK SZKODY WYNIKLE ZE STOSOWANIA TEGO 
++OPROGRAMOWANIA.
+\ No newline at end of file
