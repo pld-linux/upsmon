@@ -1,0 +1,66 @@
+--- upsmonitor/upsd.conf.orig	Wed Oct 23 23:19:41 2002
++++ upsmonitor/upsd.conf	Wed Oct 23 23:20:04 2002
+@@ -75,9 +75,9 @@
+ 
+ 
+ ###### baterie rozladowane
+-# skrytp jest uruchmiany gdy nastapi rozladowanie baterii UPS-a
++# skrypt jest uruchamiany gdy nastapi rozladowanie baterii UPS-a
+ # UPS Monitor Server uruchamia go i konczy swoja prace.
+-# baterie rozladowane to sytuacja krytyczna , UPS bedzie pracowac 
++# baterie rozladowane to sytuacja krytyczna, UPS bedzie pracowac 
+ # 1 minute a potem sie wylaczy (modele Ares 1600, 3000 - 2 minuty)
+ # uwaga - skrypt musi zamknac system operacyjny w ciagu 1 minuty !
+ 
+@@ -85,20 +85,20 @@
+ 
+ 
+ ###### blad komunikacji z UPS-em
+-# skrypt uruchmiany jest gdy nastapi odlaczenie kabal komunikacyjnego
++# skrypt uruchamiany jest gdy nastapi odlaczenie kabla komunikacyjnego
+ # podczas normalnego stanu zasilania. 
+ 
+ UpsScriptCom /etc/ups/scripts/comerror.sh
+ 
+ 
+ ###### ostrzezenie dla uzytkownikow 
+-# skrypt uruchamiany cylkicznie podczas awarii zasislania
++# skrypt uruchamiany cyklicznie podczas awarii zasilania
+ 
+ UpsScriptMsg /etc/ups/scripts/message.sh
+ 
+ 
+ ###### minuta do zamkniecia
+-# skrypt uruchaminay 1 minute przed zamknieciem systemu operacyjnego
++# skrypt uruchamiany 1 minute przed zamknieciem systemu operacyjnego
+ 
+ UpsScriptMin /etc/ups/scripts/minute.sh
+ 
+@@ -115,7 +115,7 @@
+ ############## Powiadamienie komputerow przez siec TCP/IP ###############
+ 
+ # UPS Monitor Server moze wysylac informacje do komputerow w sieci LAN 
+-# na podstawie uprzednio zdefionowanej listy komputerow (ponizej)
++# na podstawie uprzednio zdefinowanej listy komputerow (ponizej)
+ # Na zdalnych komputerach musi byc uruchomiony UPS Monitor Client 2.0
+ # ktory po odebraniu sygnalu z UPS Monitor Server ostrzega uzytkonikow.
+ # oraz (po dodatkowej konfiguracji Clienta) moze wykonac dowolny program
+@@ -123,7 +123,7 @@
+ 
+ 
+ ####### Wlaczenie / wylaczenie powiadamiania przez TCP/IP 
+-# '1' - zezwalaj na powiadamienie przez siec TCP/IP (transport UDP)
++# '1' - zezwalaj na powiadamianie przez siec TCP/IP (transport UDP)
+ # '0' - nie zezwalaj
+ 
+ NotifyPc  0 
+@@ -151,7 +151,7 @@
+ 
+ #########################################################################
+ ######################### Adresy IP komputerow ##########################
+-# ponizej lini [PC] wpisz IP klientow z zainstalowanym UPS Monitor Client
++# ponizej linii [PC] wpisz IP klientow z zainstalowanym UPS Monitor Client
+ 
+ [PC]
+ 192.168.0.1   # przykladowy komputer
+\ No newline at end of file

@@ -1,0 +1,10 @@
+--- upsmonitor/message.sh.orig	Wed Oct 23 23:15:04 2002
++++ upsmonitor/message.sh	Wed Oct 23 23:15:10 2002
+@@ -10,5 +10,5 @@
+ wall << EOF
+ UPS: awaria zasilania !
+ zamkniecie systemu nastapi za $1 sekund !
+-posze zachowac swoja prace !
++prosze zachowac swoja prace !
+ EOF
+\ No newline at end of file
