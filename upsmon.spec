@@ -8,6 +8,9 @@ License:	Free
 Group:		Daemons
 Source0:	http://www.fideltronik.com.pl/pl_products/upsmon/software/20_linux/%{name}20s.tar
 Source1:	%{name}.init
+Patch0:		upsmon-acfail.patch
+Patch1:		upsmon-conf.patch
+Patch2:		upsmon-message.patch
 URL:		http://www.fideltronik.com.pl/
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -24,15 +27,18 @@ roboczych z zainstalowanym UPS Monitor Client.
 
 %prep
 %setup -q -c %{name}-%{version}
+%patch0
+%patch1
+%patch2
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sbindir},%{_sysconfdir}/scripts,/etc/rc.d/init.d,/var/log}
+install -d $RPM_BUILD_ROOT{%{_sbindir},/sbin,%{_sysconfdir}/scripts,/etc/rc.d/init.d,/var/log}
 
 install upsmonitor/*.sh $RPM_BUILD_ROOT%{_sysconfdir}/scripts/
 install upsmonitor/*.conf $RPM_BUILD_ROOT%{_sysconfdir}/
 install upsmonitor/upsd $RPM_BUILD_ROOT%{_sbindir}/fidel-upsd
-install upsmonitor/upsoff $RPM_BUILD_ROOT%{_sbindir}/
+install upsmonitor/upsoff $RPM_BUILD_ROOT/sbin/
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/rc.d/init.d/upsd
 
 touch $RPM_BUILD_ROOT/var/log/ups.log
@@ -61,10 +67,11 @@ fi
 %defattr(644,root,root,755)
 %doc czytaj.to
 %attr(750,root,root) %{_sbindir}/*
+%attr(750,root,root) /sbin/*
 %attr(750,root,root) %dir %{_sysconfdir}
 %attr(750,root,root) %dir %{_sysconfdir}/scripts
 %attr(755,root,root) %config(noreplace) %{_sysconfdir}/scripts/*.sh
 %attr(644,root,root) %config(noreplace) %{_sysconfdir}/*.conf
-%attr(644,root,root) %{_sysconfdir}/ups.log
+%ghost %attr(644,root,root) %{_sysconfdir}/ups.log
 %attr(755,root,root) /etc/rc.d/init.d/upsd
-%ghost %attr(644,root,root) /var/log/ups.log
+%attr(644,root,root) /var/log/ups.log
