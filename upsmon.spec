@@ -153,7 +153,7 @@ fi
 %attr(644,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/upsd.conf
 %attr(644,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/upsoff.conf
 %ghost %attr(644,root,root) %{_sysconfdir}/upsd.log
-%attr(755,root,root) /etc/rc.d/init.d/upsd
+%attr(754,root,root) /etc/rc.d/init.d/upsd
 %attr(644,root,root) /var/log/upsd.log
 
 %files client
@@ -172,4 +172,4 @@ fi
 %attr(755,root,root) %config(noreplace) %{_sysconfdir}/server4/*.sh
 %attr(755,root,root) %config(noreplace) %{_sysconfdir}/server5/*.sh
 %attr(644,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/upsc.conf
-%attr(755,root,root) /etc/rc.d/init.d/upsc
+%attr(754,root,root) /etc/rc.d/init.d/upsc
