@@ -2,7 +2,7 @@ Summary:	Allows to monitor UPS from Fideltronik
 Summary(pl):	Narzêdzia do monitorowania UPS-ów firmy Fideltronik
 Name:		upsmon
 Version:	2.2
-Release:	0.2
+Release:	0.3
 Epoch:		1
 License:	Free
 Group:		Daemons
@@ -10,7 +10,8 @@ Source0:	http://www.fideltronik.com.pl/pl_products/upsmon/software/2x_linux/%{na
 Source1:	%{name}.init
 Source2:	http://www.fideltronik.com.pl/pl_products/upsmon/software/2x_linux/%{name}20c.tar
 Source3:	%{name}-client.init
-Patch0:		upsmon-server-pliterki_i_literuffki.patch
+Patch0:		%{name}-server-pliterki_i_literuffki.patch
+Patch1:		%{name}-client-pliterki_i_literuffki.patch
 URL:		http://www.fideltronik.com.pl/
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -75,6 +76,7 @@ Wa¿niejsze cechy:
 %patch0 -p1
 mv czytaj.to server/
 %setup -q -D -T -b2 -c
+%patch1 -p1
 mv czytaj.to client/
 
 %install
