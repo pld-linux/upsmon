@@ -2,7 +2,7 @@
 #
 # upsc		This shell script takes care of starting and stopping upsc
 #
-# chkconfig:    12345 99 11
+# chkconfig:	12345 99 11
 # description:	ups-management daemon for Fideltronik
 # processname:	upsc
 #
@@ -11,38 +11,46 @@
 # Source function library.
 . /etc/rc.d/init.d/functions
 
+
 # See how we were called.
 case "$1" in
   start)
-        # Start daemons.
+	# Start daemons.
 	if [ ! -f /var/lock/subsys/upsc ]; then
 		msg_starting upsc
 		daemon fidel-upsc
 		RETVAL=$?
 		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/upsc
 	else
-		msg_Already_Running upsc
-	fi
-	;;
-  stop)
-	# Stop daemons.
-	if [ -f /var/lock/subsys/upsc ]; then
-		msg_stopping upsc
-		killproc fidel-upsc
-		rm -f /var/lock/subsys/upsc >/dev/null 2>&1
-	else
-		msg_Not_Running upsc
+		msg_already_running upsc
 		exit 1
 	fi
 	;;
-  restart)
+  stop)
+	if [ -f /var/lock/subsys/upsc ]; then
+		# Stop daemons.
+		msg_stopping upsc
+		killproc fidel-upsc
+		RETVAL=$?
+		rm -f /var/lock/subsys/upsc >/dev/null 2>&1
+	else
+		msg_not_running upsc
+		exit 1
+	fi
+	;;
+  restart|reload)
 	$0 stop
 	$0 start
+	exit $?
+	;;
+  force-reload)
+	$0 stop && $0 start
+	exit $?
 	;;
   status)
 	status fidel-upsc
 	;;
   *)
-	msg_Usage "$0 {start|stop|restart|status}"
+	msg_usage "$0 {start|stop|restart|reload|force-reload|status}"
 	exit 1
 esac
