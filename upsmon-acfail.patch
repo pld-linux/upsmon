@@ -1,5 +1,5 @@
---- upsmonitor/acfail.sh.orig	Wed Oct 23 23:14:26 2002
-+++ upsmonitor/acfail.sh	Wed Oct 23 23:14:38 2002
+--- server/scripts/acfail.sh.orig	Wed Oct 23 23:14:26 2002
++++ server/scripts/acfail.sh	Wed Oct 23 23:14:38 2002
 @@ -7,4 +7,4 @@
  # chwilowego zaniku.
  # Jako parametr jest podany czas do zamkniecia systemu w sekundach

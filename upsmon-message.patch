@@ -1,5 +1,5 @@
---- upsmonitor/message.sh.orig	Wed Oct 23 23:15:04 2002
-+++ upsmonitor/message.sh	Wed Oct 23 23:15:10 2002
+--- server/scripts/message.sh.orig	Wed Oct 23 23:15:04 2002
++++ server/scripts/message.sh	Wed Oct 23 23:15:10 2002
 @@ -10,5 +10,5 @@
  wall << EOF
  UPS: awaria zasilania !
