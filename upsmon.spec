@@ -1,5 +1,5 @@
 Summary:	Allows to monitor UPS from Fideltronik
-Summary(pl):	Zapewnia monitoring UPSów firmy Fideltronik
+Summary(pl):	Narzêdzia do monitorowania UPS-ów firmy Fideltronik
 Name:		upsmon
 Version:	2.2
 Release:	0.2
@@ -8,7 +8,7 @@ License:	Free
 Group:		Daemons
 Source0:	http://www.fideltronik.com.pl/pl_products/upsmon/software/2x_linux/%{name}22s.tar
 Source1:	%{name}.init
-Source2:    http://www.fideltronik.com.pl/pl_products/upsmon/software/2x_linux/%{name}20c.tar
+Source2:	http://www.fideltronik.com.pl/pl_products/upsmon/software/2x_linux/%{name}20c.tar
 Source3:	%{name}-client.init
 Patch0:		upsmon-server-pliterki_i_literuffki.patch
 URL:		http://www.fideltronik.com.pl/
@@ -21,21 +21,23 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Allows to monitor UPS from Fideltronik.
 
 %description -l pl
-Zapewnia monitoring i bezpieczne zamkniêcie systemu operacyjnego
-komputera z do³±czonym zasilaczem UPS, oraz powiadamianie stacji
-roboczych z zainstalowanym UPS Monitor Client.
+Narzêdzia pozwalaj±ce na monitorowanie i bezpieczne zamkniêcie systemu
+operacyjnego komputera z do³±czonym zasilaczem UPS, oraz powiadamianie
+stacji roboczych z zainstalowanym UPS Monitor Client.
 
 %package server
-Summary:    UPS Monitor 2.2 Server
-Group:	Daemons
+Summary:	UPS Monitor Server
+Summary(pl):	Serwer monitoruj±cy UPS
+Group:		Daemons
 
 %description server
-Allows to monitor UPS from Fideltronik.
+Allows to monitor UPS from Fideltronik. This package contains the UPS
+Monitor Server.
 
 %description server -l pl
-Zapewnia monitoring i bezpieczne zamkniêcie systemu operacyjnego
-komputera z do³±czonym zasilaczem UPS, oraz powiadamianie stacji
-roboczych z zainstalowanym UPS Monitor Client.
+Serwer ten pozwala na monitorowanie i bezpieczne zamkniêcie systemu
+operacyjnego komputera z do³±czonym zasilaczem UPS, oraz powiadamianie
+stacji roboczych z zainstalowanym UPS Monitor Client.
 
 Wa¿niejsze cechy:
 	* monitoring sygna³ów "awarii zasilania" i "baterii roz³adowanych"
@@ -47,12 +49,14 @@ Wa¿niejsze cechy:
 	* prosta instalacja
 
 %package client
-Summary:	UPS Monitor 2.0 Client
+Summary:	UPS Monitor Client
+Summary(pl):	Klient monitorowanie UPS-ów
 Group:		Daemons
 Version:	2.0
 
 %description client
-Allows to monitor UPS from Fideltronik.
+Allows to monitor UPS from Fideltronik. This package contains the UPS
+Monitor Client.
 
 %description client -l pl
 UPS Monitor Client 2.0 jest programem odbieraj±cym komunikaty z modu³u
@@ -67,10 +71,10 @@ Wa¿niejsze cechy:
 	* prosta instalacja 
 
 %prep
-%setup -D -T -b0 -c %{name}-%{version}
+%setup -q -c
 %patch0 -p1
 mv czytaj.to server/
-%setup -D -T -b2 -c %{name}-%{version}
+%setup -q -D -T -b2 -c
 mv czytaj.to client/
 
 %install
