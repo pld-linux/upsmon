@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+# upsd		This shell script takes care of starting and stopping upsd
+#
+# chkconfig:    12345 92 11
+# description:	ups-management daemon for Fideltronik
+# processname:	upsd
+#
+# pidfile:	/var/run/upsd.pid
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# See how we were called.
+case "$1" in
+  start)
+        # Start daemons.
+	if [ ! -f /var/lock/subsys/upsd ]; then
+		msg_starting upsd
+		daemon fidel-upsd
+		RETVAL=$?
+		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/upsd
+	else
+		msg_Already_Running upsd
+	fi
+	;;
+  stop)
+	# Stop daemons.
+	if [ -f /var/lock/subsys/upsd ]; then
+		msg_stopping upsd
+		killproc fidel-upsd
+		rm -f /var/lock/subsys/upsd >/dev/null 2>&1
+	else
+		msg_Not_Running upsd
+		exit 1
+	fi
+	;;
+  restart)
+	$0 stop
+	$0 start
+	;;
+  status)
+	status upsd
+	;;
+  *)
+	msg_Usage "$0 {start|stop|restart|status}"
+	exit 1
+esac
