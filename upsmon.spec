@@ -7,8 +7,10 @@ Epoch:		1
 License:	Free
 Group:		Daemons
 Source0:	http://www.fideltronik.com.pl/pl_products/upsmon/software/2x_linux/%{name}22s.tar
+# Source0-md5:	fe84d5184fde34e76bdd507724ccc7d1
 Source1:	%{name}.init
 Source2:	http://www.fideltronik.com.pl/pl_products/upsmon/software/2x_linux/%{name}20c.tar
+# Source2-md5:	edb5c41b874cc9be95c2cbc6c12c699d
 Source3:	%{name}-client.init
 Patch0:		%{name}-server-pliterki_i_literuffki.patch
 Patch1:		%{name}-client-pliterki_i_literuffki.patch
