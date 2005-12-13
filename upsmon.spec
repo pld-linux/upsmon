@@ -32,8 +32,8 @@ stacji roboczych z zainstalowanym UPS Monitor Client.
 Summary:	UPS Monitor Server
 Summary(pl):	Serwer monitoruj±cy UPS
 Group:		Daemons
-PreReq:		rc-scripts
 Requires(post,preun):	/sbin/chkconfig
+Requires:	rc-scripts
 
 %description server
 Allows to monitor UPS from Fideltronik. This package contains the UPS
@@ -58,8 +58,8 @@ Summary:	UPS Monitor Client
 Summary(pl):	Klient monitorowanie UPS-ów
 Version:	2.0
 Group:		Daemons
-PreReq:		rc-scripts
 Requires(post,preun):	/sbin/chkconfig
+Requires:	rc-scripts
 
 %description client
 Allows to monitor UPS from Fideltronik. This package contains the UPS
@@ -150,8 +150,8 @@ fi
 %attr(750,root,root) %dir %{_sysconfdir}
 %attr(750,root,root) %dir %{_sysconfdir}/scripts
 %attr(755,root,root) %config(noreplace) %{_sysconfdir}/scripts/*.sh
-%attr(644,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/upsd.conf
-%attr(644,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/upsoff.conf
+%attr(644,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/upsd.conf
+%attr(644,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/upsoff.conf
 %ghost %attr(644,root,root) %{_sysconfdir}/upsd.log
 %attr(754,root,root) /etc/rc.d/init.d/upsd
 %attr(644,root,root) /var/log/upsd.log
@@ -171,5 +171,5 @@ fi
 %attr(755,root,root) %config(noreplace) %{_sysconfdir}/server3/*.sh
 %attr(755,root,root) %config(noreplace) %{_sysconfdir}/server4/*.sh
 %attr(755,root,root) %config(noreplace) %{_sysconfdir}/server5/*.sh
-%attr(644,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/upsc.conf
+%attr(644,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/upsc.conf
 %attr(754,root,root) /etc/rc.d/init.d/upsc
