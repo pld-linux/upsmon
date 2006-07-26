@@ -150,11 +150,11 @@ fi
 %attr(750,root,root) %dir %{_sysconfdir}
 %attr(750,root,root) %dir %{_sysconfdir}/scripts
 %attr(755,root,root) %config(noreplace) %{_sysconfdir}/scripts/*.sh
-%attr(644,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/upsd.conf
-%attr(644,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/upsoff.conf
-%ghost %attr(644,root,root) %{_sysconfdir}/upsd.log
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/upsd.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/upsoff.conf
+%ghost %{_sysconfdir}/upsd.log
 %attr(754,root,root) /etc/rc.d/init.d/upsd
-%attr(644,root,root) /var/log/upsd.log
+/var/log/upsd.log
 
 %files client
 %defattr(644,root,root,755)
@@ -171,5 +171,5 @@ fi
 %attr(755,root,root) %config(noreplace) %{_sysconfdir}/server3/*.sh
 %attr(755,root,root) %config(noreplace) %{_sysconfdir}/server4/*.sh
 %attr(755,root,root) %config(noreplace) %{_sysconfdir}/server5/*.sh
-%attr(644,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/upsc.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/upsc.conf
 %attr(754,root,root) /etc/rc.d/init.d/upsc
