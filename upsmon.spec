@@ -1,5 +1,5 @@
 Summary:	Allows to monitor UPS from Fideltronik
-Summary(pl.UTF-8):   Narzędzia do monitorowania UPS-ów firmy Fideltronik
+Summary(pl.UTF-8):	Narzędzia do monitorowania UPS-ów firmy Fideltronik
 Name:		upsmon
 Version:	2.2
 Release:	0.3
@@ -30,7 +30,7 @@ stacji roboczych z zainstalowanym UPS Monitor Client.
 
 %package server
 Summary:	UPS Monitor Server
-Summary(pl.UTF-8):   Serwer monitorujący UPS
+Summary(pl.UTF-8):	Serwer monitorujący UPS
 Group:		Daemons
 Requires(post,preun):	/sbin/chkconfig
 Requires:	rc-scripts
@@ -55,7 +55,7 @@ Ważniejsze cechy:
 
 %package client
 Summary:	UPS Monitor Client
-Summary(pl.UTF-8):   Klient monitorowanie UPS-ów
+Summary(pl.UTF-8):	Klient monitorowanie UPS-ów
 Version:	2.0
 Group:		Daemons
 Requires(post,preun):	/sbin/chkconfig
