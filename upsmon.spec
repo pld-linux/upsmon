@@ -1,5 +1,5 @@
 Summary:	Allows to monitor UPS from Fideltronik
-Summary(pl):	Narzêdzia do monitorowania UPS-ów firmy Fideltronik
+Summary(pl.UTF-8):   NarzÄ™dzia do monitorowania UPS-Ã³w firmy Fideltronik
 Name:		upsmon
 Version:	2.2
 Release:	0.3
@@ -23,14 +23,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Allows to monitor UPS from Fideltronik.
 
-%description -l pl
-Narzêdzia pozwalaj±ce na monitorowanie i bezpieczne zamkniêcie systemu
-operacyjnego komputera z do³±czonym zasilaczem UPS, oraz powiadamianie
+%description -l pl.UTF-8
+NarzÄ™dzia pozwalajÄ…ce na monitorowanie i bezpieczne zamkniÄ™cie systemu
+operacyjnego komputera z doÅ‚Ä…czonym zasilaczem UPS, oraz powiadamianie
 stacji roboczych z zainstalowanym UPS Monitor Client.
 
 %package server
 Summary:	UPS Monitor Server
-Summary(pl):	Serwer monitoruj±cy UPS
+Summary(pl.UTF-8):   Serwer monitorujÄ…cy UPS
 Group:		Daemons
 Requires(post,preun):	/sbin/chkconfig
 Requires:	rc-scripts
@@ -39,23 +39,23 @@ Requires:	rc-scripts
 Allows to monitor UPS from Fideltronik. This package contains the UPS
 Monitor Server.
 
-%description server -l pl
-Serwer ten pozwala na monitorowanie i bezpieczne zamkniêcie systemu
-operacyjnego komputera z do³±czonym zasilaczem UPS, oraz powiadamianie
+%description server -l pl.UTF-8
+Serwer ten pozwala na monitorowanie i bezpieczne zamkniÄ™cie systemu
+operacyjnego komputera z doÅ‚Ä…czonym zasilaczem UPS, oraz powiadamianie
 stacji roboczych z zainstalowanym UPS Monitor Client.
 
-Wa¿niejsze cechy:
-	* monitoring sygna³ów "awarii zasilania" i "baterii roz³adowanych"
-	* bezpieczne zamkniêcie systemu operacyjnego
-	* uruchamianie skryptów przy ka¿dej zmianie stanu zasilacza UPS
-	* wy³±czenie zasilacza UPS po zamkniêciu systemu
+WaÅ¼niejsze cechy:
+	* monitoring sygnaÅ‚Ã³w "awarii zasilania" i "baterii rozÅ‚adowanych"
+	* bezpieczne zamkniÄ™cie systemu operacyjnego
+	* uruchamianie skryptÃ³w przy kaÅ¼dej zmianie stanu zasilacza UPS
+	* wyÅ‚Ä…czenie zasilacza UPS po zamkniÄ™ciu systemu
 	* zapis historii stanu zasilania "LOG"
-	* informowanie stacji roboczych/serwerów w sieci LAN (TCP/IP)
+	* informowanie stacji roboczych/serwerÃ³w w sieci LAN (TCP/IP)
 	* prosta instalacja
 
 %package client
 Summary:	UPS Monitor Client
-Summary(pl):	Klient monitorowanie UPS-ów
+Summary(pl.UTF-8):   Klient monitorowanie UPS-Ã³w
 Version:	2.0
 Group:		Daemons
 Requires(post,preun):	/sbin/chkconfig
@@ -65,16 +65,16 @@ Requires:	rc-scripts
 Allows to monitor UPS from Fideltronik. This package contains the UPS
 Monitor Client.
 
-%description client -l pl
-UPS Monitor Client 2.0 jest programem odbieraj±cym komunikaty z modu³u
-UPS Monitor Server 2.x poprzez TCP/IP i wykonuj±cym odpowiednie skrypty,
-w których mo¿na zamie¶ciæ polecenie zamkniêcia lokalnego systemu.
+%description client -l pl.UTF-8
+UPS Monitor Client 2.0 jest programem odbierajÄ…cym komunikaty z moduÅ‚u
+UPS Monitor Server 2.x poprzez TCP/IP i wykonujÄ…cym odpowiednie skrypty,
+w ktÃ³rych moÅ¼na zamieÅ›ciÄ‡ polecenie zamkniÄ™cia lokalnego systemu.
 
-Wa¿niejsze cechy:
-	* obs³uga komunikatów TCP/IP z maksymalnie 5-ciu serwerów (UPS Monitor Server)
+WaÅ¼niejsze cechy:
+	* obsÅ‚uga komunikatÃ³w TCP/IP z maksymalnie 5-ciu serwerÃ³w (UPS Monitor Server)
 	* wykonywanie wybranego skryptu przy kazdej zmianie stanu zdalnego UPS-a
-	* dedykowane skrypty dla ka¿dego zdalnego UPS-a
-	* ³atwa konfiguracja w pliku tekstowym
+	* dedykowane skrypty dla kaÅ¼dego zdalnego UPS-a
+	* Å‚atwa konfiguracja w pliku tekstowym
 	* prosta instalacja
 
 %prep
