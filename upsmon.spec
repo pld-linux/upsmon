@@ -79,10 +79,10 @@ Ważniejsze cechy:
 
 %prep
 %setup -q -c
-%patch0 -p1
+%patch -P0 -p1
 mv czytaj.to server/
 %setup -q -D -T -b2 -c
-%patch1 -p1
+%patch -P1 -p1
 mv czytaj.to client/
 
 %install
